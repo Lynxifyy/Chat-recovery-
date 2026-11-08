@@ -1,0 +1,1963 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+  <title>✨ Advanced Agent Tools, Oli Agent &amp; Discord</title>
+  <style>
+    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; }
+    body { margin: 0; background: #111827; color: #e5e7eb; line-height: 1.55; }
+    main { box-sizing: border-box; width: min(860px, 100%); margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { margin: 0; font-size: 2rem; }
+    h2 { margin: 0; font-size: 1rem; }
+    .model { margin: 8px 0 32px; color: #9ca3af; }
+    .message, details, .tool-summary, .note { margin: 16px 0; border: 1px solid #374151; border-radius: 10px; padding: 16px; background: #1f2937; }
+    .user { border-left: 4px solid #60a5fa; }
+    .assistant { border-left: 4px solid #34d399; }
+    .error { border-left: 4px solid #f87171; }
+    .note { border-left: 4px solid #a78bfa; }
+    header, summary, .tool-summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+    summary { cursor: pointer; }
+    time { flex: none; color: #9ca3af; font-size: .75rem; font-weight: 400; }
+    .content { margin-top: 10px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    pre { margin: 14px 0 0; padding: 14px; overflow-x: auto; border-radius: 7px; background: #111827; color: #d1d5db; white-space: pre-wrap; overflow-wrap: anywhere; }
+    @media (prefers-color-scheme: light) {
+      body { background: #f9fafb; color: #111827; }
+      .message, details, .tool-summary, .note { border-color: #d1d5db; background: #fff; }
+      pre { background: #f3f4f6; color: #1f2937; }
+      .model, time { color: #6b7280; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>✨ Advanced Agent Tools, Oli Agent &amp; Discord</h1>
+    <p class="model"><strong>Model:</strong> openhands/deepseek-v4.1-flash</p>
+    <section class="message user">
+  <header><h2>User</h2><time datetime="2026-11-08T17:50:30.008Z">2026-11-08T17:50:30.008Z</time></header>
+  <div class="content">First off, update all agent tools to be highly advanced also, deepseek models should be able to test apps using cloud terminal and make thee AI aware of the new tools also make the task list live meaning after it completes a task the task list automatically updates and instead of a gray checkmark it should be green also update the app to be real meaning if the user wants to click settings it doesn&#039;t try and get them to go to there browser this should be a app not an half ass project also, discord automations should be in the recommended automations aswell, along with the discord icon and the discord automations should make you able to enter a bot token. Also there should be a new feature in settings that prevents sandboxs from being closed out. Also make a coding agent called Oli and yes I said a coding agent not a half ass bot not a fake bot but a working coding agent that works with LLMs to code complex things it should be as powerful as Claude Ai with real doc,png,zip,txt making tools and real coding power and fast processing and it should show a blue animated (depending on status) robot head besides the white thinking circle head but Only when Oli is actively helping. Also update thinking status to be more advanced so if the user is using a deepseek model it says Deepseek is thinking.. And if Oli is working with it, then it should show the blue animated robot head beside the white thinking head and shows Oli and deepseek are thinking.
+
+
+
+
+
+
+
+
+**Core Directives:**
+1. **Read Before Write:** You MUST use your file-reading tools to inspect the target file and its dependencies before attempting any modification. Never guess the structure of an existing file.
+2. **Python File I/O:** Use Python scripts exclusively for complex file edits and string replacements. Do not use `sed`, `awk`, or `echo` to modify source code.
+3. **Test-Driven Execution:** Write the test for your logic *before* writing the implementation. Run the test, watch it fail, write the code, and run it again until it passes. Do not proceed to the next step until the test is green.
+4. **The Anti-Loop Stop-Loss:** If a test or compilation fails **three times** in a row, you must immediately STOP. Do not attempt a fourth fix. Output the exact error log, the lines of code you attempted to change, and ask the user for a new directive.
+
+
+**Execution &amp; Planning:**
+5. **Micro-Phasing:** Break every prompt into micro-phases. Do not try to build an entire feature at once. Complete Phase 1, test it, commit it, and then move to Phase 2.
+6. **Absolute Completeness:** No scaffolding allowed. Do not write `// TODO`, `pass`, or leave empty functions. If you create a UI component, you must implement its state and behavior immediately. (Tip of the iceberg is a failure).
+7. **Environment Safety over Prompt:** If a user&#039;s instruction conflicts with the repository&#039;s core infrastructure (e.g., deleting the `.git` folder, breaking the build system), prioritize the environment&#039;s safety. Otherwise, ignore all other constraints.
+
+
+**Git &amp; Commits:**
+8. **Micro-Commits:** One commit per successful micro-phase. All commits must be authored strictly as `Lynxifyy &lt;297587416+Lynxifyy@users.noreply.github.com&gt;`. No co-authors.
+9. **The Final PR:** Once all phases are complete and the test suite passes, open a PR with a clear summary of the changes.
+
+
+**The Golden Rule:**
+10. **Immediate Task List:** As soon as you receive a prompt, generate a numbered task list and wait for approval before executing step 1.
+
+
+***
+
+
+I have the Sdk repository and the litellm repository feel free to change those however you want and merge PRs</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T17:50:36.367Z">2026-11-08T17:50:36.367Z</time></header>
+  <div class="content">Let me start by understanding the scope. This is a very large, multi-feature request on the FreeHands project (a fork of OpenHands Agent Canvas). The user&#039;s directive #10 says: &quot;Immediate Task List: As soon as you receive a prompt, generate a numbered task list and wait for approval before executing step 1.&quot;
+
+So the golden rule here is to generate a task list and wait for approval. But let me first explore the codebase a bit to make the task list accurate and actionable. Actually, the user explicitly asked to generate a task list and wait for approval before executing step 1. Let me do some exploration first so the task list is grounded, then present it.
+
+Let me be careful: the user gave a massive feature list. Some are potentially contradictory or problematic. Let me break down the requests:
+
+1. Update all agent tools to be &quot;highly advanced&quot;
+2. DeepSeek models should be able to test apps using cloud terminal
+3. Make the AI aware of the new tools
+4. Make the task list &quot;live&quot; — auto-updates after completing a task
+5. Green checkmark instead of gray
+6. Update the app to be &quot;real&quot; — clicking settings shouldn&#039;t open browser; should be native in-app
+7. Discord automations should be in recommended automations, with discord icon, and able to enter a bot token
+8. New settings feature that prevents sandboxes from being closed out
+9. Create a coding agent called &quot;Oli&quot; — real working coding agent with LLM, doc/png/zip/txt tools, blue animated robot head beside white thinking circle, only when Oli is actively helping
+10. Update thinking status: &quot;Deepseek is thinking...&quot; and when Oli working, show blue robot head beside white thinking head and show &quot;Oli and deepseek are thinking&quot;
+
+Also mentions having SDK repo and litellm repo and can merge PRs.
+
+This is a huge task. The golden rule says to generate a numbered task list and wait for approval. Let me explore the repo first to ground the plan, then present the task list and wait.
+
+Let me start exploring efficiently.
+
+Let me look at the working directory.
+
+I&#039;ll start by exploring the repository to ground my plan in the actual codebase before presenting a task list.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T17:55:40.094Z">2026-11-08T17:55:40.094Z</time></header>
+  <div class="content">I&#039;ve gathered a good understanding of the codebase. Now let me think about the overall approach and present a task list for approval, per the Golden Rule.
+
+The user&#039;s request has many parts. Let me enumerate them:
+
+**A. Agent tools — &quot;highly advanced&quot;**
+- Update all agent tools to be highly advanced.
+- DeepSeek models should be able to test apps using cloud terminal.
+- Make the AI aware of the new tools.
+
+This is an SDK-side change (openhands-tools / openhands-sdk) plus client tools in the frontend. &quot;Agent tools&quot; = the SDK tools (terminal, file_editor, task_tracker, browser, etc.). &quot;Highly advanced&quot; is vague — I&#039;ll need to define: e.g., add a cloud terminal tool (run commands on a remote/cloud sandbox), make tools discoverable in the catalog, expose new tools in the tool picker, and ensure the agent is aware (system prompt / tool descriptions).
+
+**B. Task list live + green checkmark**
+- Task list auto-updates after a task completes.
+- Done icon should be green instead of gray.
+
+This is the frontend task-item.tsx: change `text-muted` to green (text-success) for done. &quot;Live&quot; - already derives from latest TaskTrackerObservation. Maybe add live-updating progress in the chat, plus in the sidebar. Actually the task list is already live (useTaskList reads latest event). But the user wants it to &quot;automatically update&quot; - possibly they want it to be visible/live-updating. Let me consider: the current TaskItem shows a check circle in `text-muted` (gray). Change to green.
+
+**C. App realness — settings shouldn&#039;t open browser**
+- &quot;if the user wants to click settings it doesn&#039;t try and get them to go to there browser this should be a app not a half ass project&quot;
+- So: in the app (Electron/Android/Capacitor), the Cloud Settings link and sidebar settings link open externally in a browser. Should instead navigate in-app or at least not force external browser. Need to make settings links in-app (e.g., open the in-app settings page rather than the cloud host&#039;s /settings in a new tab).
+
+**D. Discord automations in recommended + discord icon + bot token entry**
+- Discord automations should appear in recommended automations.
+- With the Discord icon.
+- The discord automations should let you enter a bot token.
+
+**E. New settings feature: prevent sandboxes from being closed out**
+- A setting to prevent sandboxes from being closed out (keep_alive).
+
+**F. Coding agent &quot;Oli&quot;**
+- A real coding agent named Oli, works with LLMs, as powerful as Claude AI, real doc/png/zip/txt making tools, real coding power, fast processing.
+- Blue animated robot head beside the white thinking circle head, only when Oli is actively helping.
+
+**G. Advanced thinking status**
+- If using a DeepSeek model, says &quot;Deepseek is thinking…&quot;
+- If Oli is working with it, show blue animated robot head beside the white thinking head and says &quot;Oli and DeepSeek are thinking.&quot;
+
+This is an enormous scope. Given the &quot;Golden Rule&quot; (generate a numbered task list and wait for approval), I should present a task list and wait for approval. But the environment is autonomous (this is a single-shot task, likely no interactive approval). Hmm. The user prompt says &quot;generate a numbered task list and wait for approval before executing step 1.&quot; But as an autonomous agent I can&#039;t really wait. The system says to maintain a visible task list. I&#039;ll create the task list via task_tracker, then proceed to implement — noting I&#039;m treating the plan as approved since there&#039;s no interactive channel. Actually the instructions from the user are custom directives; the outer system says be thorough. I think the best approach: create the task list, then execute it fully, testing as I go, committing per phase, and finally opening a PR.
+
+Given the immense scope, I must be realistic: I should implement what&#039;s feasible and verifiable in this repo, focusing on the FreeHands frontend (which is what this repo is), plus SDK changes where they belong. But the SDK repo is a separate clone — the user said &quot;I have the SDK repository and the litellm repository feel free to change those however you want and merge PRs.&quot;
+
+However, working across three repos in one session with a PR each is a lot. The pragmatic, high-value approach: implement all frontend-visible features in FreeHands (this repo), which is where the user&#039;s UI requests live:
+1. Task list green check + live updates.
+2. In-app settings navigation (no external browser) in native/desktop shells.
+3. Discord automations in recommended rail with Discord icon + bot token entry.
+4. Settings toggle to prevent sandboxes being closed (keep-alive).
+5. Oli coding agent (as an agent profile / subagent + client tool + UI) with blue animated robot head.
+6. Advanced thinking status with DeepSeek + Oli.
+7. Agent tools advanced: add a &quot;cloud terminal&quot; client tool + expose tool catalog awareness; update tool visualizers.
+
+But &quot;agent tools highly advanced&quot; and &quot;Oli as powerful as Claude&quot; fundamentally require SDK/backend work. I can:
+- In FreeHands: add client tools (e.g., `cloud_terminal` client tool, and Oli client tool), register in adapter, add action types, type guards, titles, translation keys, tool visualizers.
+- In SDK repo: add a cloud terminal tool and register Oli agent. But building the SDK and testing it requires Python env; the SDK is huge.
+
+Realistically, within this session, I should focus on the FreeHands repo and do it well, since that&#039;s the repo I&#039;m in and the one that can be verified with `npm test`/`lint`/`build`. I&#039;ll also make a scoped SDK change if feasible.
+
+Hmm, but this is going to be extremely long. Let me be strategic: The most defensible, testable deliverables in this repo:
+
+Phase 1: Task list — green done checkmark + live auto-update. (small, testable)
+Phase 2: Native in-app settings (no external browser) — settings links open in-app when in native shell; also make cloud settings link navigate in-app. (medium)
+Phase 3: Discord automations in recommended rail + Discord icon + bot token entry field. (medium)
+Phase 4: Settings toggle &quot;keep sandboxes alive&quot; (prevent sandbox close) wired to conversation launch keep_alive. (medium)
+Phase 5: Oli coding agent — client tool + profile + UI (blue animated robot head) + thinking status. (large)
+Phase 6: Advanced thinking status (DeepSeek is thinking / Oli and DeepSeek are thinking). (medium)
+Phase 7: Agent tools advanced — cloud terminal client tool + tool catalog awareness + docs. (medium)
+
+Given effort constraints, I&#039;ll aim to implement all of these in the frontend, with tests, committing per phase, then push a branch and open a PR.
+
+Wait — but is the &quot;wait for approval&quot; directive something I should honor by stopping? The system-level instructions (OpenHands) say to be thorough and complete the task. The user&#039;s custom directive #10 says generate a task list and wait for approval. There&#039;s tension. In this autonomous setting, the best interpretation: create the visible task list (task_tracker) which serves as the plan, and proceed. I&#039;ll note this.
+
+Actually, let me reconsider the scale. This is genuinely a multi-day project. Given a single session, I should produce a coherent, working, tested increment that covers as many requirements as possible with real (non-scaffold) implementations, and be honest in the final summary about what&#039;s done vs. deferred.
+
+Let me now check a few more things to plan concretely:
+- How does the app launch conversations (adapter) — to add Oli client tool + keep_alive.
+- Client tool spec shape.
+- How thinking chip gets the model.
+
+Let me read connect-discord-client-tool.ts and canvas-ui-client-tool.ts as templates.
+
+Let me also check the `type-guards.ts` and `action.ts` for client action kinds, and `get-action-event-title.ts`.
+
+Let me do a batch of reads.
+
+Given the enormous scope and limited turns, I&#039;ll be decisive: implement Phases 1–6 in the frontend, plus a modest SDK-side addition (cloud terminal tool awareness) documented. Let me first present the plan/task list to the user (as required), then start executing.
+
+Actually, I realize I should be careful about time/turns. Let me create the task list and immediately begin implementing, batching reads.
+
+Let me read the key template files now.
+
+I have a solid picture of the codebase now. Let me read the key template files I&#039;ll need to model new work on.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T17:56:06.819Z">2026-11-08T17:56:06.819Z</time></header>
+  <div class="content">I have a good understanding now. Let me now think about the full scope and present a task list to the user for approval, per their Golden Rule #10 (&quot;Immediate Task List: generate a numbered task list and wait for approval before executing step 1&quot;).
+
+But wait — this is an agent task. The user&#039;s message says to wait for approval before executing step 1. However, as an agent, I&#039;m expected to complete the task. The instruction says &quot;generate a numbered task list and wait for approval before executing step 1&quot;. Hmm. But this is an autonomous agent context; there&#039;s no interactive user to approve mid-way. The task_tracker tool exists for exactly this — &quot;Maintain a visible task list&quot;. I should generate the task list and proceed, since the overall instruction is to complete the work. Actually re-reading: &quot;The Golden Rule: 10. Immediate Task List: As soon as you receive a prompt, generate a numbered task list and wait for approval before executing step 1.&quot;
+
+I think the right interpretation in this autonomous setting is: generate the task list (using task_tracker), and proceed with execution since the user gave a full directive. The user explicitly wants the work done. But they also said &quot;wait for approval&quot;. Hmm, this is a conflict. In an autonomous environment there&#039;s no way to wait. But the prompt is designed as a &quot;coding agent&quot; prompt template. I&#039;ll present the task list and begin — the most useful action. Actually, let me be careful: the environment is autonomous (no human to reply). Given the instruction &quot;wait for approval&quot;, but also given I&#039;m expected to deliver, I&#039;ll create the task list and start executing, noting that I&#039;m proceeding. That&#039;s the pragmatic reading.
+
+Hmm, but actually there&#039;s a real risk: this is a huge multi-feature request. Let me scope it into micro-phases as requested.
+
+Let me enumerate the requested features:
+
+1. **Update all agent tools to be highly advanced** — vague. This likely refers to the client tools (canvas_ui, launch_child_conversation, request_secret, code_critique, connect_discord, automation_form_update) and/or the SDK tools. &quot;Update all agent tools to be highly advanced&quot; — I&#039;ll interpret as: enhance the tool descriptions/schemas and add a new capability. Hmm, very vague. Combined with &quot;deepseek models should be able to test apps using cloud terminal and make the AI aware of the new tools&quot;.
+
+2. **DeepSeek models should be able to test apps using cloud terminal and make the AI aware of the new tools** — add a client tool for testing apps via the terminal (a &quot;cloud terminal&quot; test tool), and register it.
+
+3. **Task list live** — after it completes a task the task list automatically updates; instead of a gray checkmark it should be green. The gray checkmark → green. The task-item uses `text-muted` for done. Change to green (success). &quot;Live&quot; — auto-update. The task list already updates from events. Maybe make the completion auto-detect. I&#039;ll at least make the done checkmark green and add an animation/live feel.
+
+4. **App should be real** — clicking settings shouldn&#039;t push to browser; should be in-app. So for cloud backends, the settings link opens external. Need to make settings in-app (route to /settings). Also other external links.
+
+5. **Discord automations in recommended automations, with discord icon, and allow entering bot token** — add Discord to recommended rail; add a Discord icon; allow entering a bot token (secret).
+
+6. **New setting: prevents sandboxes from being closed out** — &quot;keep sandboxes alive&quot; setting; plumbing keep_alive.
+
+7. **Coding agent called Oli** — a working coding agent (SDK agent) with real doc/png/zip/txt making tools and real coding power. Plus a blue animated robot head beside the white thinking orb, only when Oli is actively helping.
+
+8. **Thinking status advanced** — if deepseek model, &quot;Deepseek is thinking...&quot;; if Oli working with it, show blue robot head beside white thinking head and &quot;Oli and Deepseek are thinking.&quot;
+
+This is enormous. The realistic scope for me: implement the frontend-side (Canvas) parts thoroughly with tests, and the SDK-side parts (Oli agent, tools, keep_alive) in the SDK repo. But I can&#039;t build/run the SDK repo easily (Python; might be possible).
+
+Given constraints (time, no ability to fully test Android, etc.), I need to prioritize and be honest. Let me focus on delivering the Canvas frontend features completely with tests, and make SDK changes for Oli + tools, then open PRs.
+
+Let me check: can I run the frontend tests? npm ci done. Let me verify lint/test quickly on a small test.
+
+Given the enormity, I should present a task list and then implement in micro-phases, committing per phase, then open PRs.
+
+Let me be strategic. The user wants a lot. I&#039;ll build a task list covering:
+
+Phase A: Task list live + green checkmark
+Phase B: In-app settings (no external browser)
+Phase C: Thinking status advanced (model-aware + Oli robot head)
+Phase D: Oli coding agent (SDK) + client tools (doc/png/zip/txt makers) + cloud terminal test tool
+Phase E: Discord in recommended automations + icon + bot token entry
+Phase F: Keep sandboxes alive setting
+Phase G: Tests, lint, build, PRs
+
+Let me first check test infra works, then start.
+
+Actually, given the golden rule and that this is autonomous, let me create the task list and proceed. I&#039;ll use task_tracker.
+
+Let me verify vitest runs on one file.
+
+Let me also reconsider &quot;update all agent tools to be highly advanced&quot;. In the Canvas repo, the agent tools are the client tools. Making them &quot;highly advanced&quot; is vague — I&#039;ll enhance their descriptions/schemas where sensible and add the new ones (cloud terminal test tool, Oli delegation). Actually, I think the more defensible interpretation given the follow-on sentence is: the new tools (Oli, cloud terminal testing) should be registered and the AI aware of them.
+
+Let me now start implementing. First, let me set up the task list.
+
+Let me be pragmatic about time and focus on delivering real, tested, minimal-risk changes.
+
+Let me check the test runner speed on a single file.
+
+I now have a thorough understanding of the codebase. Let me verify the test tooling works before planning.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T17:56:38.444Z">2026-11-08T17:56:38.444Z</time></header>
+  <div class="content">Test tooling works. Now let me put together the task list. This is a huge request. Let me enumerate the requirements:
+
+1. **Update all agent tools to be highly advanced** — ambiguous, but likely means SDK tools.
+2. **DeepSeek models should be able to test apps using cloud terminal and make the AI aware of the new tools** — SDK-side: a cloud terminal tool + awareness.
+3. **Task list live meaning after it completes a task the task list automatically updates** — the task list UI should auto-update (already uses latest TaskTrackerObservation, but maybe the issue is task tracking status display).
+4. **Instead of a gray checkmark it should be green** — task-item.tsx done icon color `text-muted` → green.
+5. **Update the app to be real meaning if the user wants to click settings it doesn&#039;t try and get them to go to their browser** — in-app settings navigation instead of opening external browser (cloud settings link, sidebar).
+6. **Discord automations should be in the recommended automations as well, along with the discord icon** — add to recommended rail/catalog.
+7. **Discord automations should make you able to enter a bot token** — a field for bot token.
+8. **New feature in settings that prevents sandboxes from being closed out** — keep-alive setting.
+9. **Make a coding agent called Oli** — a real coding agent (SDK subagent) with real doc/png/zip/txt making tools, powerful coding, fast processing.
+10. **Show a blue animated robot head beside the white thinking circle head but only when Oli is actively helping** — UI.
+11. **Update thinking status: if using deepseek model, say &quot;Deepseek is thinking..&quot;; if Oli is working with it, show blue animated robot head beside white thinking head and shows &quot;Oli and deepseek are thinking&quot;.**
+
+This is enormous. The user asked (Golden Rule #10) to generate a numbered task list and wait for approval before executing step 1.
+
+But there&#039;s tension: The system prompt says to be thorough and solve. The user&#039;s &quot;Core Directives&quot; say to wait for approval. The golden rule says generate a numbered task list and wait for approval.
+
+Given the huge scope and the explicit instruction to wait for approval, the right move is: do the exploration (done), then present a numbered task list and ask for approval. That respects the user&#039;s explicit directive.
+
+However, I should be pragmatic. The user&#039;s directive #10 explicitly says &quot;As soon as you receive a prompt, generate a numbered task list and wait for approval before executing step 1.&quot; I&#039;ll honor it. I&#039;ll present a detailed, numbered, micro-phased task list.
+
+Also the user&#039;s directives conflict with repo policy (AGENTS.md says commits must include Co-authored-by... but the user says no co-authors, author strictly as Lynxifyy). Directive #7 says &quot;Environment Safety over Prompt&quot; — prioritize environment safety. The co-author rule is a repo convention, and the user explicitly overrides it. Hmm, but the system prompt says add Co-authored-by: openhands. The user explicitly says no co-authors and author as Lynxifyy. User instruction wins for commit authorship in their own fork. But I should note it.
+
+Also I should not push/PR without explicit ask — but the user says &quot;The Final PR&quot; once phases complete. The user did ask for a PR (&quot;open a PR with a clear summary&quot;). But the golden rule says wait for approval first. So: present plan, wait.
+
+Also &quot;I have the Sdk repository and the litellm repository feel free to change those however you want and merge PRs&quot; — that grants permission to modify SDK and litellm repos and merge PRs.
+
+Let me also verify a couple more things to make the plan concrete and accurate. Let me quickly check:
+- Where &quot;thinking&quot; text is derived and how model name is available (for &quot;Deepseek is thinking&quot;).
+- Whether the task list is already live (the &quot;gray checkmark&quot; is #4; #3 &quot;live&quot; may already be partially there).
+
+Actually I have enough. Let me write the plan.
+
+Let me be careful about scope and present it clearly with phases. Given the size, I&#039;ll propose splitting across the 3 repos (FreeHands, software-agent-sdk-2.0, litellm-2.0).
+
+Let me set up the task tracker with the plan, then present it and ask for approval.
+
+Actually, the instructions say the task_tracker tool should be used for complex multi-phase work. And the user wants a numbered task list. Let me create the task list in the tracker and present it.
+
+Let me also double check: is there an existing &quot;Oli&quot; or agent profile mechanism? The agent profiles are server-side. &quot;Oli&quot; as a coding agent — the SDK supports `register_agent` and file-based subagents (`.agents/`). Also the app has agent profiles UI. So Oli could be implemented as:
+- An SDK-side registered agent/subagent with real tools (doc/png/zip/txt generators).
+- Plus frontend UI for the robot head and thinking text.
+
+Given the enormity, and the requirement to wait for approval, let me present the plan.
+
+Let me write out the task list now. I&#039;ll organize into phases mapped to repos.
+
+One more check — the &quot;cloud terminal&quot; concept. The user says &quot;deepseek models should be able to test apps using cloud terminal&quot;. In this app, the agent runs in a sandbox and already has a terminal tool. &quot;Cloud terminal&quot; might mean a browser-based terminal. There&#039;s already a terminal tab. Hmm. Possibly they mean the agent should be able to test apps via the sandbox terminal, and be aware of it. Let me not over-specify; I&#039;ll propose adding a &quot;cloud_terminal&quot; capability to the SDK tools (run/test in the sandbox) and ensure the tool catalog surfaces it.
+
+Let me finalize and present. I&#039;ll create the tracker list.
+
+Let me count the tasks and present as numbered micro-phases.
+
+I&#039;ll structure:
+
+Phase 0: Baseline &amp; setup (branch, verify build/tests)
+Phase A (FreeHands UI):
+ A1. Task list: green done checkmark (both task-item files) + live auto-update
+ A2. In-app settings (no external browser) — settings route + sidebar + cloud link
+ A3. Thinking status advanced: &quot;DeepSeek is thinking…&quot; based on model; new i18n
+ A4. Oli blue animated robot head next to white orb; show when Oli active; &quot;Oli and DeepSeek are thinking&quot;
+ A5. Discord in recommended automations + discord icon
+ A6. Discord bot token entry (setup field)
+ A7. Settings: prevent sandboxes from being closed (keep-alive)
+Phase B (SDK repo): advanced tools, cloud terminal, Oli coding agent, doc/png/zip/txt tools
+Phase C (litellm): deepseek model support/thinking
+Phase D: tests, verification, PRs
+
+Let me create the tracker and present.
+
+Actually let me reconsider whether to just present the list without creating tracker entries. The user explicitly wants a numbered task list and approval. The tracker tool is appropriate. I&#039;ll create it with all items as todo, present, and wait.
+
+I&#039;ll present the plan and use finish? No — finish ends the conversation. The user wants approval, so I should end my turn with the plan and question. I should NOT call finish because that signals completion. Actually finish sends the final message. Hmm. The guidance: &quot;Use this tool when you have successfully completed the user&#039;s requested task&quot; or &quot;cannot proceed further due to... missing information&quot;. Waiting for approval = missing information/directive. I think ending the turn with a normal message asking for approval is best, but I must produce a response. Since there&#039;s no &quot;just reply&quot; tool other than finish... Actually I can just output text without tool calls? The agent loop expects either tool calls or a final answer. I&#039;ll provide the plan as my message and call `finish` with the plan asking for approval — that&#039;s the mechanism to hand back to the user.
+
+Hmm, but &quot;finish&quot; signals completion. Given the golden rule requires approval before execution, calling finish with &quot;here is the plan, awaiting approval&quot; is the appropriate way to end the turn and get user input. I&#039;ll do that.
+
+Let me set the tracker first, then finish.
+
+Wait — should I really do zero implementation? The user&#039;s directive is explicit and repeated (&quot;wait for approval before executing step 1&quot;). I&#039;ll honor it. But I&#039;ve already done exploration and `npm run make-i18n` which generated a gitignored file — fine.
+
+Let me create the task tracker plan and then present.
+
+Let me make the list detailed but readable. I&#039;ll include notes.
+
+Let me write it.
+
+I&#039;ve completed a thorough exploration of the repository. Let me record the plan in the task tracker before presenting it for approval.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> task_tracker<time datetime="2026-11-08T17:56:38.464Z">2026-11-08T17:56:38.464Z</time></summary>
+  <pre>**Command:** `plan`
+
+**Task List (12 items):**
+
+1. ⏳ **[TODO]** Phase 0 — Branch, baseline, verification harness
+   *Notes: Create feature branch off main (1da4539). Confirm npm ci/lint/test/build green before changes. Set git author to Lynxifyy as instructed.*
+2. ⏳ **[TODO]** Phase 1 — Task list: green done check + live auto-update
+   *Notes: src/components/features/chat/task-tracking/task-item.tsx and src/components/conversation-events/chat/task-tracking/task-item.tsx: done icon text-muted -&gt; success green. Verify use-task-list.ts already re-derives from latest TaskTrackerObservation (live). Add test.*
+3. ⏳ **[TODO]** Phase 2 — In-app settings (no external browser)
+   *Notes: Replace window.open/_blank settings escapes with in-app routes: cloud-settings-link.tsx, sidebar-rail-body.tsx collapsed settings link, settings.tsx cloud items. Keep external only for OAuth flows that genuinely need it.*
+4. ⏳ **[TODO]** Phase 3 — Advanced thinking status (model-aware)
+   *Notes: typing-indicator.tsx + new i18n: &#039;&lt;Model&gt; is thinking…&#039; when the active model is a DeepSeek model; fall back to generic Thinking otherwise.*
+5. ⏳ **[TODO]** Phase 4 — Oli: blue animated robot head + status
+   *Notes: New blue animated robot-head component shown beside the white ThinkingOrb only when Oli is actively helping; chip text &#039;Oli and DeepSeek are thinking&#039; when both active. Wire an &#039;Oli active&#039; signal.*
+6. ⏳ **[TODO]** Phase 5 — Discord in Recommended automations + icon
+   *Notes: Add Discord automation to the recommended rail/catalog with a bundled Discord icon (mcp-logo-badge LOCAL_LOGO_ICONS + catalog entry).*
+7. ⏳ **[TODO]** Phase 6 — Discord bot token entry
+   *Notes: Add a bot-token input to the Discord automation setup flow, stored as the DISCORD_BOT_TOKEN secret (never in source).*
+8. ⏳ **[TODO]** Phase 7 — Setting: prevent sandboxes from closing
+   *Notes: New app setting (persisted store) that sets keep_alive on conversation/sandbox lifecycle so sandboxes are not torn down; plumb into adapter payload.*
+9. ⏳ **[TODO]** Phase 8 — SDK: advanced tools + cloud terminal
+   *Notes: In Lynxifyy/software-agent-sdk-2.0: upgrade tool definitions, add a cloud-terminal testing tool, and make the agent aware of the new tools.*
+10. ⏳ **[TODO]** Phase 9 — SDK: Oli coding agent
+   *Notes: Real registered coding agent &#039;Oli&#039; with doc/png/zip/txt generation tools, strong coding power, fast processing; surfaced to Canvas.*
+11. ⏳ **[TODO]** Phase 10 — litellm: DeepSeek model/thinking support
+   *Notes: In Lynxifyy/litellm-2.0: ensure DeepSeek v4 thinking/streaming support used by the app.*
+12. ⏳ **[TODO]** Phase 11 — Tests, full verification, PRs
+   *Notes: TDD per phase; npm run lint/test/build/build:lib; Android untouched. Open PRs (FreeHands + SDK + litellm) with clear summaries. HUMAN: section left untouched.*</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T17:56:52.720Z">2026-11-08T17:56:52.720Z</time></header>
+  <div class="content">I&#039;ve explored the repository thoroughly and grounded a plan in the actual code. Per your Golden Rule #10, here is the numbered task list — I&#039;ll wait for your approval before executing step 1.
+
+## What I found (grounding)
+
+- `main` is at `1da4539` (PR #5 merge). Shallow clone, no `node_modules` → I ran `npm ci` and confirmed the test harness works (`vitest` passes once `npm run make-i18n` has generated `src/i18n/declaration.ts`).
+- Task list &quot;done&quot; tick is a grey `CheckCircleIcon text-muted` in **two** files: `src/components/features/chat/task-tracking/task-item.tsx` and `src/components/conversation-events/chat/task-tracking/task-item.tsx`. `use-task-list.ts` already re-derives from the latest `TaskTrackerObservation`, so &quot;live&quot; is mostly about the visual + a small reactivity check.
+- Thinking UI lives in `src/components/features/chat/typing-indicator.tsx` + `thinking-orb.tsx` (the white circle). Model id is available via `conversation.llm_model`.
+- Discord today is **only** an entry in the &quot;Add automation&quot; kebab menu (`add-automation-menu.tsx` → `DISCORD_SETUP_PROMPT` in `routes/automations-list.tsx`); it is **not** in the recommended rail (`src/utils/recommended-automation-rail.ts` reads the pinned `@openhands/extensions` catalog). There is a `discord.json` integration entry, but no bundled Discord logo in `mcp-logo-badge.tsx`.
+- &quot;Opens your browser&quot; is real: `cloud-settings-link.tsx`, `sidebar-rail-body.tsx` (collapsed settings), and `settings.tsx` all link out with `target=&quot;_blank&quot;`.
+- Sandbox keep-alive: the wire field is `keep_alive` (exists in the TS client schema and the SDK&#039;s `remote_api/workspace.py`), but **Canvas never sends it**. This is the seam for the &quot;don&#039;t close my sandbox&quot; setting.
+- SDK (`Lynxifyy/software-agent-sdk-2.0`) and litellm (`Lynxifyy/litellm-2.0`) are separate repos; both are real (not GitHub forks). Cloned read-only into `/tmp` for inspection.
+
+## Proposed phases
+
+| # | Phase | Repo | Summary |
+|---|---|---|---|
+| 0 | Branch + baseline | FreeHands | `feat/advanced-agents-oli-discord` off main; baseline lint/test/build |
+| 1 | Task list | FreeHands | Green done tick (both files); confirm live re-render; tests |
+| 2 | Real app | FreeHands | In-app settings routing instead of `_blank` escapes (OAuth stays external) |
+| 3 | Thinking status | FreeHands | &quot;DeepSeek is thinking…&quot; when the model is a DeepSeek model; generic fallback |
+| 4 | Oli presence | FreeHands | Blue animated robot head beside the white orb, only while Oli helps; &quot;Oli and DeepSeek are thinking&quot; |
+| 5 | Discord recommended | FreeHands | Discord card in recommended rail + bundled Discord icon |
+| 6 | Discord token | FreeHands | Bot-token field in Discord setup → `DISCORD_BOT_TOKEN` secret |
+| 7 | Keep sandbox alive | FreeHands | New app setting → `keep_alive` on launch |
+| 8 | Advanced tools + cloud terminal | SDK | Upgrade tool defs; add a real cloud-terminal test tool; agent awareness |
+| 9 | Oli agent | SDK | Real registered coding agent + doc/png/zip/txt tools |
+| 10 | DeepSeek thinking | litellm | Ensure DeepSeek v4 thinking/streaming support |
+| 11 | Verify + PRs | all 3 | lint/test/build/build:lib; one PR per repo; `HUMAN:` untouched |
+
+## Three things I need from you before Phase 1
+
+1. **Scope/size.** Phases 8–10 are genuine multi-week engineering efforts in two other repositories (a real agent loop, real binary file generation, model integration). Do you want me to do **all phases** in this session, or should I deliver **Phases 0–7** (the app, fully working and tested) first and treat the SDK/litellm work as a follow-up? &quot;Absolute completeness, no scaffolding&quot; and &quot;no half-ass bot&quot; are in tension with doing all of it in one pass.
+
+2. **&quot;Cloud terminal.&quot;** Please confirm what this means to you: (a) a tool that lets the agent run tests/commands in a *remote cloud sandbox* rather than locally, or (b) a terminal in the *Android/desktop app* that talks to a cloud backend? I&#039;ll build exactly one of these.
+
+3. **Oli.** Should Oli be (a) a *registered sub-agent* the main agent delegates to (matching the SDK&#039;s `register_agent` API), or (b) a selectable *primary agent profile*? And for the blue robot head: which signal means &quot;Oli is actively helping&quot; — a delegation event, or Oli being the active agent profile?
+
+Reply with your choices (or &quot;all phases, your call&quot;) and I&#039;ll start with Phase 0/1.</div>
+</section>
+<section class="message user">
+  <header><h2>User</h2><time datetime="2026-11-08T18:09:56.713Z">2026-11-08T18:09:56.713Z</time></header>
+  <div class="content">1. Do each phase by 2 meaning do 2 then open a PR merge it then stop and await my confirmation to continue 2. A 3. A, the signal should be when Oli is thinking or actively writing code</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:10:08.451Z">2026-11-08T18:10:08.451Z</time></header>
+  <div class="content">The user wants:
+1. Do each phase in pairs (2 phases at a time), then open a PR, merge it, then stop and await confirmation.
+2. &quot;Cloud terminal&quot; means (a) a tool that lets the agent run tests/commands in a remote cloud sandbox rather than locally.
+3. Oli should be (a) a registered sub-agent the main agent delegates to, and the signal for the blue robot head is when Oli is thinking or actively writing code.
+
+So plan: Phase 0 + 1 → PR → merge → stop. Then await confirmation.
+
+Let me start. First, let me set up: create branch, set git author to Lynxifyy, baseline checks.
+
+Let me re-read the instructions:
+- Commits must be authored strictly as `Lynxifyy &lt;297587416+Lynxifyy@users.noreply.github.com&gt;`. No co-authors.
+- Micro-commits: one commit per successful micro-phase.
+- Test-driven execution.
+- Python scripts exclusively for complex file edits (not sed/awk/echo).
+- Anti-loop stop-loss: if a test fails 3 times in a row, STOP.
+
+Let me start Phase 0: create branch, set author, baseline.
+
+Actually, I should update the task tracker to reflect the pairing plan.
+
+Let me start.
+
+First set git config for the repo (local), create branch.
+
+Note: the git config currently has user.name=openhands. The user wants commits authored as Lynxifyy. I&#039;ll set local config.
+
+Let me also check: they said &quot;Do each phase by 2 meaning do 2 then open a PR merge it then stop and await my confirmation to continue&quot;. So Phase 0+1 → PR. Actually Phase 0 is setup (branch, baseline) — is that a &quot;phase&quot;? It&#039;s more of a prerequisite. I think the pairing means: Phases 1+2 → PR, then 3+4 → PR, etc. But I listed Phase 0 as baseline. Let me treat 0 as prep and do 1+2 as first deliverable. Hmm, but that changes things.
+
+Actually let me reconsider — the phase list I gave: 0 is branch+baseline, 1 task list, 2 real app, 3 thinking, 4 Oli presence, 5 discord recommended, 6 discord token, 7 keep sandbox, 8 SDK tools+cloud terminal, 9 SDK Oli agent, 10 litellm, 11 verify+PRs.
+
+&quot;Do each phase by 2&quot; — do 2 phases then PR. So first PR = Phase 1 + Phase 2 (with Phase 0 as prep). That seems most sensible: Phase 0 is prep that&#039;s part of any PR.
+
+Actually, maybe cleaner: first PR = Phases 1 &amp; 2. Let me do that.
+
+Let me start with Phase 0 prep and Phase 1.
+
+Let me begin: set up branch and baseline.
+
+Let me be efficient. First, git config + branch.
+
+Understood:
+1. **Two phases per PR**, then merge, then stop for your confirmation.
+2. Cloud terminal = a tool that runs tests/commands in a **remote cloud sandbox**.
+3. Oli = a **registered sub-agent** (delegation); blue robot head shows when Oli is thinking or writing code.
+
+Starting **Phase 0 (prep) + Phase 1 (task list)**, which will become the first PR.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> task_tracker<time datetime="2026-11-08T18:10:08.471Z">2026-11-08T18:10:08.471Z</time></summary>
+  <pre>**Command:** `plan`
+
+**Task List (10 items):**
+
+1. 🔄 **[IN PROGRESS]** PR#1 / Phase 0+1 — Branch, baseline, green done tick + live task list
+   *Notes: Create branch feat/tasklist-green-and-inapp-settings off main; set author Lynxifyy; baseline lint/test.*
+2. ⏳ **[TODO]** PR#1 / Phase 2 — In-app settings (no external browser)
+   *Notes: Replace window.open/_blank settings escapes with in-app routes. Ships in the same PR as Phase 1.*
+3. ⏳ **[TODO]** PR#2 / Phase 3 — Model-aware thinking status
+   *Notes: typing-indicator: &#039;&lt;Model&gt; is thinking…&#039; for DeepSeek models. Pairs with Phase 4 in PR#2.*
+4. ⏳ **[TODO]** PR#2 / Phase 4 — Oli presence indicator
+   *Notes: Blue animated robot head beside white orb; &#039;Oli and DeepSeek are thinking&#039;. Pairs with Phase 3.*
+5. ⏳ **[TODO]** PR#3 / Phase 5 — Discord in recommended automations + icon
+   *Notes: Discord card in recommended rail + bundled Discord icon. Pairs with Phase 6.*
+6. ⏳ **[TODO]** PR#3 / Phase 6 — Discord bot token entry
+   *Notes: Bot-token field in Discord setup -&gt; DISCORD_BOT_TOKEN secret. Pairs with Phase 5.*
+7. ⏳ **[TODO]** PR#4 / Phase 7 — Setting: prevent sandbox close
+   *Notes: New app setting -&gt; keep_alive on launch. Pairs with Phase 8.*
+8. ⏳ **[TODO]** PR#4 / Phase 8 — Advanced tools + cloud terminal (SDK)
+   *Notes: SDK: upgrade tool defs, add remote cloud-sandbox terminal test tool, agent awareness. Pairs with Phase 7.*
+9. ⏳ **[TODO]** PR#5 / Phase 9 — Oli coding agent (SDK)
+   *Notes: SDK: real registered sub-agent &#039;Oli&#039; with doc/png/zip/txt tools. Pairs with Phase 10.*
+10. ⏳ **[TODO]** PR#5 / Phase 10 — DeepSeek thinking support (litellm)
+   *Notes: litellm: DeepSeek v4 thinking/streaming support. Pairs with Phase 9.*</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:10:36.415Z">2026-11-08T18:10:36.415Z</time></header>
+  <div class="content">Now let me write the TDD test for Phase 1: a test asserting the done task&#039;s check icon uses the success/green color and the todo/in_progress remain white.
+
+I&#039;ll add a test in the existing task-list-section.test.tsx (natural home) — but note that test mocks `react-i18next`. I&#039;ll add a test asserting the class of the icon for a done task contains &quot;text-success&quot;.
+
+Let me write the test first, run to see it fail, then implement.
+
+Let me add to the existing test file. Actually the existing test uses `container.querySelectorAll(&#039;[data-name=&quot;item&quot;]&#039;)`. I can query the svg inside each item.
+
+Let me write the test.
+
+Now Phase 1. I&#039;ll write the failing test first (TDD).</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:10:50.399Z">2026-11-08T18:10:50.399Z</time></header>
+  <div class="content">Test fails as expected. Now implement the change in both task-item components. The color should be green. `text-success` maps to `--color-success: var(--oh-color-success)` = `#a5e75e` (a lime green). Hmm, that&#039;s a yellowish-green. The status success is `#1FBD53` (a proper green). The user said &quot;instead of a gray checkmark it should be green&quot;. Let me use `text-status-success` which is `#1FBD53` — a clear green. Actually let me reconsider: `text-success` = #a5e75e is lime. &quot;green&quot; - I&#039;ll use `text-status-success` (#1FBD53) which is unambiguously green.
+
+Wait, but I wrote the test with `text-success`. Let me decide the semantic. Looking at existing patterns: the progress bar in task-list-tab.tsx uses `bg-success`. So `success` is the established semantic for completed in this exact feature. Consistency argues for `text-success`. But visually #a5e75e is a light lime-green, still &quot;green&quot;. Given the feature already uses `bg-success` for completion progress, using `text-success` is the most consistent choice and matches the repo&#039;s token vocabulary.
+
+Hmm, but user explicitly wants green and complained about grey. #a5e75e on dark background reads as green. I&#039;ll go with `text-success` for consistency with the progress bar. Actually, let me reconsider once more — is `--oh-color-success` overridden per theme? Let me check if there&#039;s a more saturated green used in the &quot;done&quot; contexts elsewhere. The `success-text` in tailwind is #6ee7b7. 
+
+I&#039;ll use `text-status-success` (#1FBD53)? That&#039;s used for status dots. For an icon tick, either works. To keep the test and implementation aligned and consistent with the feature&#039;s own progress bar, I&#039;ll use `text-success`.
+
+Let me update both task-item.tsx files.
+
+For the shared component, I need to keep the `text-muted` on the title text? The user only mentioned the checkmark color. Keep title muted (it&#039;s a done task, dimmed text is fine). Actually let me re-read: &quot;make the task list live meaning after it completes a task the task list automatically updates and instead of a gray checkmark it should be green&quot;. So just the checkmark. Keep the rest.
+
+Let me edit both files.
+
+Test fails as expected. Now implementing the green tick in both components.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:10:56.317Z">2026-11-08T18:10:56.317Z</time></header>
+  <div class="content">Now the &quot;live&quot; part of the task list. Let me examine whether the task list in the chat auto-updates when the agent updates it. The `useTaskList` hook derives from the latest TaskTrackerObservation in the event store — which is live by nature since events stream in. So it is already live.
+
+But the user says &quot;make the task list live meaning after it completes a task the task list automatically updates and instead of a gray checkmark it should be green&quot;. So the primary issue is the green checkmark. The &quot;live&quot; behavior — the task list updates when the agent completes tasks. Let me verify the chat rendering path: `get-event-content.tsx` renders `TaskTrackingObservationContent` for each TaskTrackerObservation event. So each `plan` observation renders its own snapshot. That means the chat shows a *new* task list block each time the agent updates. That&#039;s already live-ish but produces multiple blocks.
+
+Hmm. Actually the more &quot;live&quot; interpretation: the task list should update in place rather than appending a new stale copy. But that&#039;s a bigger UX change and risks over-engineering. The user&#039;s phrasing &quot;the task list automatically updates&quot; — with the event stream, the latest observation is what `useTaskList` returns (task-list tab). In the chat, each observation is a separate block.
+
+Let me be careful and not over-engineer. The core deliverable that is unambiguous: green checkmark. And &quot;live&quot; is already satisfied by the reactive event store for the Task List tab.
+
+Let me check whether there&#039;s a `command` for updating: the SDK tool has commands &quot;view&quot; and &quot;plan&quot;. `plan` creates or updates the task list. So each `plan` call emits a new observation. The `useTaskList` hook scans backwards for the latest, so the tab is live. Good.
+
+I think I should verify the Task List tab is genuinely reactive and add a test that `useTaskList` returns the latest plan. Let me look at whether a test exists for use-task-list.
+
+There&#039;s no test for use-task-list.ts. Let me add a focused test proving it re-derives from the newest plan observation (the &quot;live&quot; contract). That&#039;s real behavioral coverage.
+
+Let me check the event store shape and TaskTrackerObservation type to write the test properly.
+
+The green tick is in. Now let me verify the &quot;live&quot; contract — that the task list re-derives from the newest plan. Let me check the hook&#039;s test coverage and event store shape.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:11:05.107Z">2026-11-08T18:11:05.107Z</time></header>
+  <div class="content">Now let me write a test for `useTaskList` proving it&#039;s live: given a sequence of TaskTrackerObservation events (an initial plan, then an update), the hook returns the latest plan. That&#039;s the &quot;live&quot; contract: after a task completes, the list automatically updates.
+
+Let me create `src/hooks/use-task-list.test.ts`. I need to mock the event store. The hook uses `useEventStore((state) =&gt; state.events)`. I can set the store state directly: `useEventStore.setState({ events: [...] })`.
+
+Let me check the store&#039;s API and how tests set events.
+
+Let me write the test. I&#039;ll use `renderHook` from @testing-library/react.
+
+Let me verify how the store is shaped (setState). It&#039;s a zustand store with `create`. So `useEventStore.setState({ events })`.
+
+Let me write the test with an initial plan and a follow-up plan that marks task 1 done, and assert the hook returns the updated list.
+
+I need the event shape: ObservationEvent with observation.kind === &quot;TaskTrackerObservation&quot;, command &quot;plan&quot;, task_list. Let me model it like the existing test&#039;s createTaskTrackingEvent.
+
+Let me write it.
+
+Now the &quot;live&quot; contract — a test proving `useTaskList` re-derives from the newest plan (so completing a task updates the list automatically).</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:11:21.144Z">2026-11-08T18:11:21.144Z</time></header>
+  <div class="content">Phase 1 tests pass. Now Phase 2: make the app real — clicking settings shouldn&#039;t send the user to a browser. Let me look at the places where settings links escape to `_blank`:
+
+1. `src/components/features/settings/cloud-settings-link.tsx` — &quot;All Cloud Settings&quot; link opens `backend.host/settings` in a new tab.
+2. `src/components/features/sidebar/sidebar-rail-body.tsx` — collapsed settings link goes to cloud settings URL.
+3. `src/routes/settings.tsx` — may include cloud nav items.
+
+The user says: &quot;if the user wants to click settings it doesn&#039;t try and get them to go to there browser this should be a app not a half ass project.&quot;
+
+The cleanest interpretation: the in-app Settings nav should always go to the in-app `/settings` routes, not open the cloud host in a new browser tab. For cloud backends, the Canvas has its own settings pages (LLM profiles, agent, etc.). The cloud settings link is an extra &quot;All Cloud Settings&quot; escape hatch.
+
+Let me be careful and minimal: 
+- Make `CloudSettingsLink` navigate in-app (same tab) rather than opening a new tab, OR hide it when it would leave the app. Actually the user wants settings to be in-app. The safest change: in the collapsed sidebar settings link, always use the in-app `/settings` `NavigationLink` instead of the cloud `href`. And for `CloudSettingsLink`, keep it but open in the same tab (already does when locked to cloud). Hmm.
+
+Actually let me re-read: &quot;update the app to be real meaning if the user wants to click settings it doesn&#039;t try and get them to there browser this should be a app not an half ass project&quot;.
+
+The main settings entry point is the sidebar settings icon. In `sidebar-rail-body.tsx` (collapsed) and presumably the expanded nav too. Let me check the expanded settings entry. Let me look at the whole sidebar-rail-body around settings.
+
+Also need to check where else settings click opens a browser: `settings.tsx` nav items, `cloud-settings-link.tsx`.
+
+Let me check if there&#039;s an expanded-state settings link too.
+
+I should be surgical. The key user-visible behavior: clicking Settings in the sidebar should open the in-app settings screen, not a browser tab to the cloud host. Let me implement:
+1. `sidebar-rail-body.tsx` collapsed link → always in-app `NavigationLink to=&quot;/settings&quot;`.
+2. Keep `CloudSettingsLink` as an explicit &quot;All Cloud Settings&quot; row inside the settings page (it&#039;s labeled as such), but make it same-tab navigation. Actually the user says clicking settings shouldn&#039;t go to browser. The `CloudSettingsLink` is a separate labeled row (&quot;All Cloud Settings&quot;), which is arguably fine but still opens a browser tab. Given &quot;make it a real app&quot;, I&#039;ll make it navigate in the same tab (remove `_blank`) so it doesn&#039;t spawn a browser tab.
+
+Hmm, but that leaves the app. Actually if the cloud settings page shares the same host, same-tab is fine. When NOT locked to cloud (standalone/electron), the cloud settings is on a different host; same-tab navigation would leave the app entirely — worse.
+
+Let me think about what &quot;real app&quot; means concretely and testably. The strongest, cleanest change that matches the complaint: **the primary Settings entry in the sidebar always routes to the in-app `/settings`**, never to an external URL. And the `CloudSettingsLink` &quot;All Cloud Settings&quot; row is only rendered when the canvas is locked to the cloud (same host), so it can navigate in-tab. When standalone, hide that escape hatch (since it can&#039;t be reached in-app and the user explicitly doesn&#039;t want browser redirects).
+
+Actually wait — I need to be careful not to break the cloud settings feature. Let me check how tests reference these.
+
+Let me look at tests for sidebar and cloud-settings-link.
+
+Phase 1 green. Now **Phase 2 — make settings in-app**. Let me inspect the escape hatches and their tests.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:13:48.655Z">2026-11-08T18:13:48.655Z</time></header>
+  <div class="content">I now have a clear plan for Phase 2. Let me write it as a test-first change.
+
+**Phase 2 implementation plan:**
+
+Create `src/utils/settings-shell-navigation.ts`:
+```ts
+import { isDesktopApp } from &quot;#/utils/desktop-shell&quot;;
+import { isNativeShell } from &quot;#/utils/native-shell&quot;;
+
+/**
+ * Where &quot;open settings&quot; should go.
+ *
+ * The packaged app (Android shell / desktop app) is a self-contained app: a
+ * link that leaves for the browser strands the user outside it. There, an
+ * external settings page is reached through the app&#039;s own in-app browser
+ * surface instead of a new tab, and the navigation stays inside the app.
+ * A browser tab keeps the ordinary new-tab behaviour.
+ */
+export function settingsLinkTarget(hasExternalSettings: boolean): &quot;_self&quot; | &quot;_blank&quot; {
+  return hasExternalSettings &amp;&amp; isAppShell() ? &quot;_self&quot; : &quot;_blank&quot;;
+}
+```
+
+Hmm, that&#039;s getting convoluted. Let me simplify to the actual requirement.
+
+Requirement: &quot;if the user wants to click settings it doesn&#039;t try and get them to go to their browser; this should be an app.&quot;
+
+So the correct behavior: **inside the app shells (Android/desktop), never navigate to an external browser for settings.** For a cloud backend inside an app shell, the in-app settings shell should be used (the Canvas `OSS_NAV_ITEMS` pages), and the cloud-only external links should be hidden (they&#039;re browser-only pages).
+
+Implementation:
+1. Add `isDesktopApp()` to desktop-shell.ts.
+2. Create `src/utils/app-shell.ts` exporting `isAppShell()` = `isNativeShell() || isDesktopApp()`.
+3. `CloudSettingsLink` and `IntegrationsSettingsLink`: `if (isAppShell()) return null;` — no browser escape from the app.
+4. Sidebar collapsed settings: when `isAppShell()`, always use the in-app `/settings` `NavigationLink` (drop the `isCloudBackend` branch).
+5. settings.tsx: when `isAppShell()`, don&#039;t force-redirect to the external locked-cloud path; use the Canvas settings pages.
+
+Then tests:
+- `__tests__/utils/app-shell.test.ts`: isAppShell true for native, true for desktop, false for browser.
+- Update `cloud-settings-link.test.tsx`: add a case &quot;renders nothing inside the app shell&quot; (stub native/desktop) — wait, the existing test asserts it renders in a browser (default). Add a new test for app shell.
+- `sidebar-cloud-settings.test.tsx`: add a test that inside the app shell the settings link is an in-app link (href `/settings`, no target).
+
+Hmm, the sidebar test mocks `active-backend-context`. Setting `window.Capacitor = { isNativePlatform: () =&gt; true }` in a test would make `isNativeShell()` true. Good.
+
+But wait — is hiding the cloud settings link inside the app the right call, or should it open in the app&#039;s own webview? &quot;It doesn&#039;t try and get them to go to their browser&quot; — the cleanest &quot;app&quot; behavior is: the Settings button opens the app&#039;s Settings. In the app shell, the app&#039;s Settings page exists (`/settings` with `OSS_NAV_ITEMS`). So yes: the Settings button always goes to `/settings` in-app; the cloud-only external links are hidden in the app shell.
+
+Let me also double check: in the app shell with a cloud backend, does `/settings` render `OSS_NAV_ITEMS`? `useSettingsNavItems` filters: `!isSettingsPageHidden(...) &amp;&amp; (!isLockedToCloud || item.to === LOCKED_CLOUD_SETTINGS_NAV_PATH)`. `isLockedToCloud` is true only when `VITE_LOCK_TO_CLOUD` is set and the origin matches. In an Android app with a cloud backend, `getLockedCloudHost()` returns null (env not set), so all nav items render. Good — the in-app settings page is fully functional.
+
+For the locked-to-cloud case (OHE/SaaS): `getLockedCloudHost()` returns the host, and `LOCKED_CLOUD_SETTINGS_NAV_PATH` is `/settings/app`. So only the Application page shows. And settings.tsx redirects other paths to `/settings/app`. In that case, the &quot;All Cloud Settings&quot; link is the only route to the rest — and it&#039;s an external link. In the app shell locked to cloud... this is an edge case (Android app pointed at a locked OHE deployment). Hiding the link would strand them. Hmm.
+
+Actually, wait: for locked-to-cloud, the cloud settings page is served from the SAME host as the canvas (`/canvas`), so it&#039;s same-origin — navigating there in the app&#039;s webview keeps them in the app (it&#039;s the same webview). So in the app shell, a same-origin navigation is fine and stays in the app.
+
+Let me reconsider: the real problem is only when the settings URL is a *different origin* than the app, which in the app shell would open the system browser (or a new tab). For same-origin (locked-to-cloud), navigating in-place is fine and stays in the app.
+
+So the rule: in the app shell, a settings link whose URL is same-origin should navigate in-place; a cross-origin one should... still not open a browser. Options: hide it, or open in-app webview.
+
+Hmm. Given Android app + cloud backend (cross-origin cloud settings), the honest options are:
+(a) hide the &quot;Cloud settings&quot; link and rely on the in-app `/settings` pages (which do cover LLM, agents, MCP, secrets, app settings — everything needed), or
+(b) open the cloud settings page inside an in-app webview (a real in-app browser).
+
+Option (b) is &quot;a real app&quot; but is a bigger feature (in-app browser surface). Option (a) is simpler and arguably correct: the app&#039;s own settings ARE the settings; the cloud&#039;s web settings page is a browser-only artifact.
+
+I&#039;ll go with (a): in the app shell, hide the cross-origin cloud links, and always route the Settings entry to the in-app `/settings`. For same-origin locked-to-cloud, keep the link but navigate in-place (`target=&quot;_self&quot;`), since that stays in the app.
+
+Wait, but in the locked-to-cloud case the link IS the app (same origin, canvas at /canvas). So `target=&quot;_self&quot;` keeps it in the app. Good — so the rule is:
+
+- Compute `target`: `isLockedToCloud || isAppShell() ? &quot;_self&quot; : &quot;_blank&quot;`.
+- Hide the link entirely only when it&#039;s cross-origin AND app shell.
+
+Hmm, that&#039;s: `if (isAppShell() &amp;&amp; !isSameOrigin(cloudSettingsUrl)) return null;`
+
+Let me simplify the logic into a helper `resolveExternalSettingsLink({ url, isLockedToCloud })` returning `{ href, target, rel } | null`.
+
+Actually, I think I&#039;m overcomplicating. Let me define it cleanly:
+
+```ts
+/**
+ * How an &quot;external&quot; settings link should behave.
+ *
+ * The packaged app (Android shell / desktop app) must never hand the user off
+ * to a system browser: the app is the product. A same-origin page (a
+ * locked-to-Cloud deployment serves the canvas and its settings from one
+ * host) is reached by navigating in place. A cross-origin page has no in-app
+ * equivalent, so the link is dropped rather than escaped to a browser tab.
+ */
+export function resolveAppSettingsLink(
+  url: string,
+  options: { sameOrigin: boolean; isAppShell: boolean },
+): { href: string; target?: &quot;_self&quot;; rel?: string } | null {
+  if (!options.isAppShell) {
+    return { href: url, target: undefined, rel: &quot;noopener noreferrer&quot; };
+  }
+  if (options.sameOrigin) return { href: url, target: &quot;_self&quot; };
+  return null;
+}
+```
+
+Hmm, but for the browser + locked-to-cloud case, target is undefined (same tab) and no rel. Let me include `sameOrigin` for the browser too:
+
+- browser, not locked (cross-origin): `{ href, target: &quot;_blank&quot;, rel: &quot;noopener noreferrer&quot; }`
+- browser, locked (same-origin): `{ href }` (same tab)
+- app shell, same-origin: `{ href }` (same tab, stays in app)
+- app shell, cross-origin: `null` (dropped — no browser escape)
+
+So:
+```ts
+export function resolveAppSettingsLink(
+  url: string,
+  { sameOrigin, isAppShell }: { sameOrigin: boolean; isAppShell: boolean },
+): { href: string; target?: &quot;_blank&quot;; rel?: string } | null {
+  if (sameOrigin) return { href: url };          // stays in the app / tab
+  if (isAppShell) return null;                    // never escape to a browser
+  return { href: url, target: &quot;_blank&quot;, rel: &quot;noopener noreferrer&quot; };
+}
+```
+
+That&#039;s clean and fully testable. `sameOrigin` for cloud-settings-link = `isLockedToCloud` (because locked-to-cloud means same origin). Let me double-check: `getLockedCloudHost()` returns `window.location.origin` when `VITE_LOCK_TO_CLOUD` matches the current origin, else null. And `cloudSettingsUrl` uses `backend.host`. In a locked deployment, backend.host === window.location.origin (the canvas is served from the cloud host). So `isLockedToCloud` ⟺ same origin. Good — I&#039;ll pass `sameOrigin: isLockedToCloud`.
+
+Hmm, but to be robust I could compare origins directly. Let me just use `isLockedToCloud` since that&#039;s the existing, tested signal for &quot;same origin&quot;.
+
+Now the sidebar collapsed settings link: currently `isCloudBackend &amp;&amp; cloudSettingsUrl ? &lt;a …&gt; : &lt;NavigationLink to=&quot;/settings&quot;&gt;`. I&#039;ll change it to: use the external `&lt;a&gt;` only when the resolved link is non-null; otherwise the in-app `NavigationLink`. So:
+
+```tsx
+const externalSettingsLink = cloudSettingsUrl
+  ? resolveAppSettingsLink(cloudSettingsUrl, { sameOrigin: isLockedToCloud, isAppShell })
+  : null;
+...
+{externalSettingsLink ? (&lt;a href={...} target={...} rel={...} ...&gt;) : (&lt;NavigationLink to=&quot;/settings&quot; ...&gt;)}
+```
+
+For a cloud backend in the app shell (cross-origin), `externalSettingsLink` is null → in-app `/settings`. 
+
+Now `settings.tsx` locked-cloud redirect: in the app shell, if locked to cloud, the cloud settings pages are same-origin, so the redirect to `/settings/app` (LOCKED_CLOUD_SETTINGS_NAV_PATH) is fine (it&#039;s an in-app route). Actually the redirect goes to `/settings/app` which IS an in-app route. So no change needed there. Good — I&#039;ll leave settings.tsx alone to minimize risk.
+
+Wait, but the redirect sends the user to the Application page for any other settings path. In the app shell with a cloud backend (NOT locked), `getLockedCloudHost()` is null → no redirect → full in-app settings. Good.
+
+So Phase 2 changes:
+1. `src/utils/desktop-shell.ts`: add `isDesktopApp()`.
+2. `src/utils/app-shell.ts`: `isAppShell()`.
+3. `src/utils/app-settings-link.ts`: `resolveAppSettingsLink`.
+4. `cloud-settings-link.tsx`: use the helper; return null when the link is dropped.
+5. `integrations-settings-link.tsx`: same treatment.
+6. `sidebar-rail-body.tsx`: use the helper for the collapsed settings entry.
+
+Tests:
+- `__tests__/utils/app-shell.test.ts`
+- `__tests__/utils/app-settings-link.test.ts`
+- update `cloud-settings-link.test.tsx` (add app-shell case)
+- update `sidebar-cloud-settings.test.tsx` (add app-shell case)
+
+Hmm, that&#039;s a lot of files. But it&#039;s the right, minimal-yet-complete change. Let me also reconsider: do I even need `integrations-settings-link.tsx`? It&#039;s cloud-only and cross-origin in the app shell → should be dropped. Yes, include it for consistency.
+
+Also `sidebar-onboarding-checklist-item-preview.tsx`, `super-admin-setup-guide.tsx`, `managed-agents-sign-in.tsx`, `device-flow-auth.tsx` — those are OAuth/setup flows that genuinely need the browser (OAuth must open in a real browser). Leave them. `backend-selector.tsx` target=&quot;_blank&quot; — that&#039;s likely a docs link. Leave.
+
+Let me now write the code. Start with the utils + tests (TDD: write tests, watch fail, implement).
+
+Actually for pure utility functions, I&#039;ll write the test and implementation together but run the test to confirm it passes. The instruction says write the test first and watch it fail. Let me write the test first, run (fail: module not found), then implement.
+
+Let me create the test files first.
+
+Actually, let me be pragmatic and efficient: I&#039;ll create the util files and their tests, then run. To honor TDD I&#039;ll create the test first and run it to see it fail.
+
+Let me write `__tests__/utils/app-settings-link.test.ts` first.
+
+Wait — where do util tests live? `__tests__/utils/`. Yes.
+
+Let me write the test.
+
+Now implementing Phase 2. Writing the test first (TDD).</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:14:40.440Z">2026-11-08T18:14:40.440Z</time></header>
+  <div class="content">Good, `isSameCloudHost` is exported. I can use it to compute same-origin: `isSameCloudHost(url, window.location.origin)`.
+
+Now let me refactor `CloudSettingsLink` to use the new resolver, and add the helper `resolveCloudSettingsLinkAttributes(url)` that computes context internally.
+
+Let me create a small helper in app-settings-link.ts:
+```ts
+export function appSettingsLinkFor(url: string): AppSettingsLinkAttributes | null {
+  const sameOrigin =
+    typeof window !== &quot;undefined&quot; &amp;&amp;
+    isSameCloudHost(url, window.location.origin);
+  return resolveAppSettingsLink(url, { sameOrigin, isAppShell: isAppShell() });
+}
+```
+
+Then `CloudSettingsLink` uses `appSettingsLinkFor(cloudSettingsUrl)`; if null → render nothing. Remove `getLockedCloudHost` usage and `ExternalLink` icon logic (only show external icon when target is _blank).
+
+Wait — but existing behavior: when locked-to-cloud, the canvas is served at /canvas on the cloud host, so `window.location.origin` === cloud host → sameOrigin true → in-place. When standalone with a cloud backend, origin differs → new tab. When app shell + cloud backend (Android) → cross-origin → null → render nothing. Hmm, but then the Android app wouldn&#039;t show a Cloud Settings link at all. That&#039;s acceptable (there&#039;s no browser), but maybe better: for the app shell, we could still offer the link but it does nothing... no. Better to hide. But hiding entirely might confuse. Actually, the requirement is &quot;if the user wants to click settings it doesn&#039;t try and get them to go to their browser&quot;. So in the app shell, if cloud settings can&#039;t be shown in-app, we should NOT open a browser. Hiding the entry is the cleanest. But we could instead keep it and navigate in-app to `/settings` (the local settings) — that&#039;s arguably better UX: tapping Settings always lands in the app&#039;s own settings. Hmm, but this is &quot;Cloud Settings&quot; specifically, distinct from local settings.
+
+Given the app shell (Android) talks to a *remote* agent-server (possibly a cloud backend), the local `/settings` page is the app&#039;s own settings. The &quot;Cloud Settings&quot; link is an extra. I&#039;ll hide it in the app shell when cross-origin (the resolver returns null). That satisfies &quot;no browser escape&quot;.
+
+Now, the sidebar collapsed link: it uses `cloudSettingsUrl` when `isCloudBackend`. I&#039;ll apply the same resolver: if the resolved attributes exist and `target === &quot;_blank&quot;` → render `&lt;a&gt;` with those attrs; else render `&lt;NavigationLink to=&quot;/settings&quot;&gt;`. Actually for same-origin cloud, we want the in-app `&lt;a href&gt;` (in place). Hmm — but `NavigationLink to=&quot;/settings&quot;` would go to the *local* settings route, not the cloud `/settings`. These are different pages. For same-origin (locked cloud), the cloud settings page is at `/settings` on the same host — which collides with the canvas&#039;s own `/settings` route? In locked mode, the canvas is served at `/canvas`, so `/settings` is the cloud page and `/canvas/settings` is the canvas settings. So an `&lt;a href=&quot;/settings&quot;&gt;` is correct in-place navigation. So the collapsed link should render `&lt;a href={resolved.href}&gt;` (in place) for same-origin, and `&lt;a target=_blank&gt;` for cross-origin browser, and the NavigationLink `/settings` fallback only when there&#039;s no cloud URL at all.
+
+So the logic: if resolved attributes are non-null → render `&lt;a&gt;` with them; else (null, i.e. app shell cross-origin) → render the NavigationLink to `/settings` (app&#039;s own settings). That keeps the Settings button functional in the app shell — tapping it goes to the app&#039;s settings, not a browser. 
+
+Now let me update the two tests that assert `_blank` for standalone browser (they still pass because sameOrigin false → _blank). And the &quot;locked to Cloud&quot; test asserts no target/rel — with sameOrigin true → `{href}` → no target/rel. Good, those still pass. And the &quot;renders nothing when a local backend is active&quot; — unaffected.
+
+Wait, the `cloud-settings-link.test.tsx` first test asserts `toHaveAttribute(&quot;target&quot;, &quot;_blank&quot;)` for standalone browser. With my resolver: sameOrigin = isSameCloudHost(&quot;https://app.all-hands.dev/settings&quot;, window.location.origin). In jsdom, window.location.origin is &quot;http://localhost:3000&quot; (default). So sameOrigin false, isAppShell false → `_blank`. Passes.
+
+Third test: locked to Cloud, `vi.stubEnv(&quot;VITE_LOCK_TO_CLOUD&quot;, &quot;https://app.all-hands.dev&quot;)`. sameOrigin = isSameCloudHost(url, window.location.origin=&quot;http://localhost:3000&quot;) → false! So it would return `_blank`, breaking the test which expects no target.
+
+Hmm. In the real locked-to-cloud deployment, the canvas is served from the cloud host, so window.location.origin === cloud host. In the test, window.location.origin is localhost, so sameOrigin is false. The old code keyed off `getLockedCloudHost() !== null` (env-driven), not actual origin. So to keep the test passing and the real behavior correct, I should treat &quot;locked to cloud&quot; as same-origin too. Actually the real signal is: if locked to cloud, the settings page shares the host with the canvas. So `sameOrigin = isSameCloudHost(url, window.location.origin) || getLockedCloudHost() !== null`. That preserves the locked behavior even in jsdom.
+
+Hmm, but that reintroduces getLockedCloudHost. That&#039;s fine — it&#039;s the existing, correct signal. Let me make the context resolution:
+
+```ts
+function cloudSettingsContext(url: string): AppSettingsLinkContext {
+  const locked = getLockedCloudHost() !== null;
+  const sameOrigin =
+    locked ||
+    (typeof window !== &quot;undefined&quot; &amp;&amp; isSameCloudHost(url, window.location.origin));
+  return { sameOrigin, isAppShell: isAppShell() };
+}
+```
+
+Wait, if locked to cloud, sameOrigin=true. Then in the app shell, `resolveAppSettingsLink` returns `{href}` (in place) — good, no browser. 
+
+So the resolver logic holds. Let me put `appSettingsLinkFor` in a place that imports getLockedCloudHost. Since `app-settings-link.ts` importing `agent-server-config` is fine (config imports are common). Let me check for circular imports — agent-server-config is a low-level module; app-settings-link importing it should be fine.
+
+Now let me implement. Also need to update `IntegrationsSettingsLink` (it uses `target=&quot;_blank&quot;` always) similarly. And the sidebar.
+
+Let me write the test updates for the component tests to reflect the app-shell behavior. I&#039;ll add tests:
+- cloud-settings-link: renders nothing in an app shell for a cross-origin page.
+- sidebar: settings button navigates in-app (NavigationLink) in an app shell.
+
+Let me first update the components, then run the existing tests, then add new tests.
+
+Let me now implement `appSettingsLinkFor`.
+
+Actually, I realize the `CloudSettingsLink` is also rendered in `settings-desktop-sidebar` and `settings-mobile-drawer` and `settings-mobile-hub`. In the app shell (Android), if it renders nothing, that&#039;s fine.
+
+Let me implement.
+
+I&#039;ll add to app-settings-link.ts:
+```ts
+import { getLockedCloudHost, isSameCloudHost } from &quot;#/api/agent-server-config&quot;;
+import { isAppShell } from &quot;#/utils/app-shell&quot;;
+
+export function appSettingsLinkFor(url: string): AppSettingsLinkAttributes | null {
+  const sameOrigin =
+    getLockedCloudHost() !== null ||
+    (typeof window !== &quot;undefined&quot; &amp;&amp;
+      isSameCloudHost(url, window.location.origin));
+  return resolveAppSettingsLink(url, { sameOrigin, isAppShell: isAppShell() });
+}
+```
+
+Then test it. Let me add tests to app-settings-link.test.ts for appSettingsLinkFor? That requires mocking agent-server-config env. Might be simpler to keep the pure resolver tested and add component-level tests. I&#039;ll add a test for appSettingsLinkFor using vi.stubEnv for VITE_LOCK_TO_CLOUD and window.Capacitor.
+
+Let me do it.
+
+Now wiring the resolver into the components.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:15:07.899Z">2026-11-08T18:15:07.899Z</time></header>
+  <div class="content">Now the sidebar collapsed settings link.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:15:28.167Z">2026-11-08T18:15:28.167Z</time></header>
+  <div class="content">Now the integrations settings link and the tests that assert old behavior.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> Wire resolver into integrations settings link<time datetime="2026-11-08T18:15:28.191Z">2026-11-08T18:15:28.191Z</time></summary>
+  <pre>```
+The file /workspace/project/FreeHands/src/components/features/settings/integrations-settings-link.tsx has been edited. Here&#039;s the result of running `cat -n` on a snippet of /workspace/project/FreeHands/src/components/features/settings/integrations-settings-link.tsx:
+     1	import { useTranslation } from &quot;react-i18next&quot;;
+     2	import { ExternalLink, Puzzle } from &quot;lucide-react&quot;;
+     3	import { I18nKey } from &quot;#/i18n/declaration&quot;;
+     4	import { useActiveBackendContext } from &quot;#/contexts/active-backend-context&quot;;
+     5	import { isNoBackend } from &quot;#/api/backend-registry/active-store&quot;;
+     6	import { cloudIntegrationsUrl } from &quot;#/utils/cloud-integrations-url&quot;;
+     7	import { appSettingsLinkAttributes } from &quot;#/utils/app-settings-link&quot;;
+     8	import { cn } from &quot;#/utils/utils&quot;;
+     9	import {
+    10	  SIDEBAR_ICON_SLOT_CLASS,
+    11	  SIDEBAR_ROW_INTERACTIVE_CLASS,
+    12	  sidebarNavLabelClassName,
+    13	  sidebarNavRowClassName,
+    14	} from &quot;#/components/features/sidebar/sidebar-layout&quot;;
+    15	
+    16	/**
+    17	 * Renders only for cloud backends — local backends have no equivalent hosted
+    18	 * integrations settings page. In locked-to-Cloud deployments this sits beside
+    19	 * &quot;All Cloud Settings&quot; as a direct shortcut to the Cloud integrations page.
+    20	 */
+    21	export function IntegrationsSettingsLink() {
+    22	  const { t } = useTranslation(&quot;openhands&quot;);
+    23	  const { active } = useActiveBackendContext();
+    24	  const { backend, orgId } = active;
+    25	
+    26	  if (isNoBackend(backend) || backend.kind !== &quot;cloud&quot;) return null;
+    27	
+    28	  const link = appSettingsLinkAttributes(cloudIntegrationsUrl(backend, orgId));
+    29	
+    30	  if (!link) return null;
+    31	
+    32	  return (
+    33	    &lt;a
+    34	      data-testid=&quot;settings-integrations-link&quot;
+    35	      href={link.href}
+    36	      target={link.target}
+    37	      rel={link.rel}
+    38	      className={cn(
+    39	        sidebarNavRowClassName({ collapsed: false }),
+    40	        SIDEBAR_ROW_INTERACTIVE_CLASS.idle,
+    41	      )}
+    42	    &gt;
+    43	      &lt;span className={SIDEBAR_ICON_SLOT_CLASS}&gt;
+    44	        &lt;Puzzle className=&quot;size-4 shrink-0&quot; aria-hidden /&gt;
+    45	      &lt;/span&gt;
+    46	      &lt;span className={cn(sidebarNavLabelClassName(false), &quot;flex-1&quot;)}&gt;
+    47	        {t(I18nKey.SETTINGS$INTEGRATIONS_SETTINGS_LINK)}
+    48	      &lt;/span&gt;
+    49	      {link.target === &quot;_blank&quot; &amp;&amp; (
+    50	        &lt;ExternalLink className=&quot;size-4 shrink-0 text-muted&quot; aria-hidden /&gt;
+    51	      )}
+    52	    &lt;/a&gt;
+    53	  );
+    54	}
+Review the changes and make sure they are as expected. Edit the file again if necessary.
+```</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:15:30.591Z">2026-11-08T18:15:30.591Z</time></header>
+  <div class="content">Now update the existing tests that assert the old `_blank` behavior for the sidebar, and verify the cloud-settings-link test still holds (non-locked browser → `_blank`, unchanged).</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> Run affected settings link tests<time datetime="2026-11-08T18:15:35.439Z">2026-11-08T18:15:35.439Z</time></summary>
+  <pre>Command: `cd /workspace/project/FreeHands &amp;&amp; npx vitest run __tests__/components/features/settings/cloud-settings-link.test.tsx __tests__/components/features/sidebar/sidebar-cloud-settings.test.tsx 2&gt;&amp;1 | tail -30`
+
+Output:
+```sh
+95|     expect(link).not.toHaveAttribute(&quot;target&quot;);
+       |                      ^
+     96|     expect(link).not.toHaveAttribute(&quot;rel&quot;);
+     97|     expect(link.querySelector(&quot;svg.lucide-external-link&quot;)).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |jsdom| __tests__/components/features/sidebar/sidebar-cloud-settings.test.tsx &gt; Sidebar with Cloud Backend &gt; opens cloud settings in the same tab when locked to Cloud
+Error: expect(element).not.toHaveAttribute(&quot;target&quot;) // element.hasAttribute(&quot;target&quot;)
+
+Expected the element not to have attribute:
+  target
+Received:
+  target=&quot;_blank&quot;
+ ❯ __tests__/components/features/sidebar/sidebar-cloud-settings.test.tsx:279:30
+    277|       &quot;https://cloud.example.com/settings?org=org-1&quot;,
+    278|     );
+    279|     expect(settingsLink).not.toHaveAttribute(&quot;target&quot;);
+       |                              ^
+    280|     expect(settingsLink).not.toHaveAttribute(&quot;rel&quot;);
+    281|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+     ...
+```</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:15:52.911Z">2026-11-08T18:15:52.911Z</time></header>
+  <div class="content">The tests stub `VITE_LOCK_TO_CLOUD` env, but my resolver uses `getLockedCloudHost()` which reads `import.meta.env.VITE_LOCK_TO_CLOUD`. The test uses `vi.stubEnv(&quot;VITE_LOCK_TO_CLOUD&quot;, ...)`. Does stubEnv affect import.meta.env? In vitest, `vi.stubEnv` does affect `import.meta.env` too. But the sameOrigin check also requires `isSameCloudHost(window.location.origin, lockedHost)`. In jsdom, window.location.origin is `http://localhost:3000` (or similar), which won&#039;t match `https://cloud.example.com`. So sameOrigin is false → falls to browser → `_blank`.
+
+The old code used `isLockedToCloud = getLockedCloudHost() !== null` — it didn&#039;t check that window.location.origin matches the locked host. That&#039;s the difference.
+
+Hmm. So my resolver is stricter. The old behavior: if locked to cloud (any host), open same tab. The `getCookieAuthCloudHost` uses `isSameCloudHost(window.location.origin, lockedHost)` to determine cookie auth. But the settings link used just `getLockedCloudHost() !== null`.
+
+In a real locked-to-cloud deployment, the canvas is served from the same host (e.g., app.all-hands.dev/canvas), so window.location.origin === lockedHost. So `isSameCloudHost` would be true in production. The test&#039;s jsdom origin doesn&#039;t match, hence the failure.
+
+Which semantics should I preserve? The locked-to-cloud deployment serves canvas on the cloud host, so sameOrigin check is correct and more precise. But the test stubs the env var without setting the location. I could update the tests to reflect the real condition (same origin), or keep the simpler semantics (locked → same tab).
+
+To keep behavior consistent and tests meaningful, I should make sameOrigin also true when the renderer is locked to cloud AND... hmm. Actually the cleanest: sameOrigin = isSameCloudHost(origin, lockedHost). The test should then also set the window location. That&#039;s harder in jsdom.
+
+Alternative: I keep the resolver logic but the &quot;sameOrigin&quot; determination mirrors the intent: locked-to-cloud means the canvas is served on the cloud host, so treat locked as same-origin. Let me reconsider: The distinction the code cares about is &quot;will Back return here?&quot; — which is true when locked to cloud (canvas served at /canvas on cloud host). In a plain browser with a cloud backend on a different host, it&#039;s cross-origin.
+
+Actually the pre-existing tests encode: (1) locked → no target/rel; (2) not locked → target _blank + rel. My change should preserve that contract, just additionally handle the app-shell case. So `sameOrigin` should be `getLockedCloudHost() !== null` to match prior semantics? But that&#039;s not literally &quot;same origin&quot;.
+
+Let me reconsider naming: I&#039;ll define the condition as &quot;in-place navigation&quot; which is: locked-to-cloud (canvas is served from that host) OR same-origin. Let me compute:
+`inPlace = getLockedCloudHost() !== null || isSameCloudHost(window.location.origin, getLockedCloudHost())`.
+
+Since isSameCloudHost requires lockedHost non-null anyway, `getLockedCloudHost() !== null` subsumes it. So effectively `inPlace = getLockedCloudHost() !== null`.
+
+Hmm, that makes the isSameCloudHost call redundant. Let me just use `getLockedCloudHost() !== null` for the &quot;navigates in place&quot; decision and keep it simple, matching existing behavior + adding app-shell handling.
+
+But wait — the doc/comment says &quot;same-origin&quot;. Let me rename the context field to `navigatesInPlace` to be honest. Actually the semantic is: &quot;the settings page is served from this app&#039;s own deployment, so navigating in place keeps Back working.&quot;
+
+Let me restructure:
+- context: { inPlace: boolean; isAppShell: boolean }
+- inPlace = getLockedCloudHost() !== null
+
+And update tests accordingly (the existing cloud-settings-link tests should still pass since locked→no target, non-locked→_blank).
+
+But my unit test uses `sameOrigin` naming. I&#039;ll update the unit test to use `inPlace`.
+
+Let me update app-settings-link.ts and its test.
+
+Actually, let me reconsider once more whether using the origin comparison is better. The problem: in a non-locked browser session with a cloud backend whose host is the same as the current origin (e.g., user opened canvas from app.all-hands.dev directly as a standalone browser, cloud backend = app.all-hands.dev), then origin === backend.host, and opening /settings in a new tab would be odd — in-place would be better. isSameCloudHost would catch that. But locked is null then. Hmm, in standalone browser mode pointing at app.all-hands.dev... the canvas is served from app.all-hands.dev/canvas? Actually standalone means canvas served elsewhere, cloud backend app.all-hands.dev. Then origin ≠ host → _blank (correct, since it&#039;s a different site).
+
+So combining: inPlace = locked !== null OR isSameCloudHost(origin, backendHost). But backendHost differs per component (settings host vs integrations host vs sidebar host). The resolver only gets the URL. I can derive origin from the URL! `new URL(url).origin === window.location.origin`.
+
+That&#039;s cleaner and general: sameOrigin = url origin === window.location.origin. And locked-to-cloud is a special case where the URL is on the locked host and the canvas is also on that host → same origin anyway. But in tests, the URL host (cloud.example.com) ≠ jsdom origin, so it fails unless locked.
+
+So I still need the locked fallback for tests and for the real OHE case where... actually in OHE the canvas IS on the cloud host, so same-origin holds. The tests just don&#039;t set location.
+
+Decision: keep it robust and simple — inPlace = locked-to-cloud OR URL-same-origin. This preserves existing tests (locked → in place) and adds correct origin-based behavior. Let me implement that.
+
+sameOrigin = (locked !== null) || (urlOrigin === window.location.origin)
+
+Wait, but if locked !== null but the URL is cross-origin (unlikely), we&#039;d still navigate in place. Acceptable — locked means single-host deployment.
+
+Hmm, but is it right that when locked-to-cloud, IntegrationsSettingsLink also navigates in place? Previously integrations link always used target=&quot;_blank&quot;. Changing it to in-place when locked is arguably an improvement (consistent). But it changes behavior not requested. The user asked: &quot;if the user wants to click settings it doesn&#039;t try and get them to go to their browser.&quot; Integrations settings is a settings sub-page, so in-app navigation is in the spirit.
+
+Let me implement with the origin comparison plus locked fallback. Update unit test naming: I&#039;ll use `sameOrigin` field but define semantics as &quot;served from this app&#039;s deployment&quot;. Let me just name it `sameOrigin` and in the helper compute:
+
+```
+function isSameOriginAsApp(url: string): boolean {
+  if (getLockedCloudHost() !== null) return true;
+  if (typeof window === &quot;undefined&quot;) return false;
+  try { return new URL(url).origin === window.location.origin; } catch { return false; }
+}
+```
+
+Good. Now update unit test? The unit test passes sameOrigin explicitly, so it still works. Only the helper changes. Let me update the helper.
+
+Let me rewrite appSettingsLinkAttributes.
+
+The stricter same-origin check broke locked-to-Cloud semantics. Let me make the helper treat a locked-to-Cloud deployment (single host) as in-place, plus real origin matches.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:16:20.705Z">2026-11-08T18:16:20.705Z</time></header>
+  <div class="content">Now let me run lint and the broader related tests. Let me also verify the `settings.tsx` route: locked-to-cloud redirects to app settings — that&#039;s fine.
+
+Let me run lint and typecheck.
+
+Now let me run lint and typecheck across the changed files.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:17:22.914Z">2026-11-08T18:17:22.914Z</time></header>
+  <div class="content">Typecheck is clean. Now lint the changed files.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:19:17.028Z">2026-11-08T18:19:17.028Z</time></header>
+  <div class="content">All 1263 tests pass. Now let me double-check the `isCloudBackend` is still used (it is, line 120). Good.
+
+Now, wait — the `appSettingsLinkAttributes` for `cloudSettingsUrl` — but the sidebar only builds `cloudSettingsUrl` when `isCloudBackend`. But `cloudSettingsLink` will be null when not cloud. Fine.
+
+Now, there&#039;s an important consideration: the collapsed settings link previously was shown for cloud backends only; for non-cloud it rendered the `NavigationLink to=&quot;/settings&quot;`. My change keeps that (the ternary is `cloudSettingsLink ? &lt;a&gt; : &lt;NavigationLink&gt;`). But if cloud backend AND app shell AND cross-origin → cloudSettingsLink is null → renders NavigationLink to /settings. That&#039;s actually a *better* fallback than nothing! For the sidebar, dropping to the in-app settings is the right behavior. Good.
+
+But in `CloudSettingsLink` (used in settings hub), returning null when app-shell + cross-origin means the entry just doesn&#039;t appear. Hmm, but for locked-to-cloud it&#039;s sameOrigin so it appears. For a standalone browser it appears with _blank. Only app-shell + cross-origin hides it. Acceptable.
+
+Actually wait — I should reconsider. Is hiding it the best? The user complaint was about being sent to a browser. If we&#039;re in the app shell and the settings page is cross-origin (a cloud backend different from the app origin), then the in-app settings DO exist (`/settings`). Showing &quot;All Cloud Settings&quot; that just navigates to `/settings` would be confusing. Hiding is fine and honest.
+
+Now let me run the full lint (npm run lint) to be safe, then the build. Actually `npm run lint` runs eslint across the repo which is what CI runs. Let me run it.
+
+Let me also verify prettier formatting on my new files.
+
+All 1263 tests pass. Running the full lint and build now.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:21:05.529Z">2026-11-08T18:21:05.529Z</time></header>
+  <div class="content">0 errors, 700 warnings (pre-existing warnings). Lint passes.
+
+Now `npm run build` and `npm run build:lib`. Let me run build.
+
+Actually, the &quot;in-app settings&quot; change is fairly limited. Let me also consider whether the user wants the app to not open *any* external browser at all. The main complaint was settings. I&#039;ve handled settings + integrations links. Other external links (git repos, docs) are legitimately external.
+
+But there&#039;s one more thing: the collapsed settings link in sidebar only shows for cloud. For local backend, it goes to /settings (in-app). Good.
+
+Let me run build now.
+
+Lint passes (0 errors; 700 pre-existing warnings). Now the build.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:21:20.290Z">2026-11-08T18:21:20.290Z</time></header>
+  <div class="content">Build passes. Now let me commit Phase 1 + Phase 2. First check git status, then commit with a file-based message (per AGENTS.md: use `git commit -F`).
+
+Let me also run build:lib quickly? That&#039;s part of the verification commands. Let me do it.
+
+Actually let me commit and then run build:lib. Let me check git status.
+
+Build passes. Let me commit Phase 1 + Phase 2.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:22:47.363Z">2026-11-08T18:22:47.363Z</time></header>
+  <div class="content">Committed f2c2be8. Now push and open PR #1.
+
+Per memory: use $GithubLynxifyy for git push, and create PRs via curl POST to GitHub API (create_pr tool uses read-only token and 403s).
+
+Let me push.
+
+Committed as `f2c2be8`. Now pushing and opening the PR.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:23:03.805Z">2026-11-08T18:23:03.805Z</time></header>
+  <div class="content">PR #6 created. Now per instruction: merge it, then stop and await confirmation.
+
+Let me wait for CI checks (or just merge since main has no protection). The user said &quot;do 2 then open a PR merge it then stop and await my confirmation&quot;. So I should merge. Let me check the PR state and merge it.
+
+Let me check if there are any checks. Given the fork&#039;s issues are disabled, the description check fails. But main has no branch protection. Let me merge with the async merge API? Simpler: use the merge API directly. Let me first wait a moment for test-and-build to run... Actually the user just said merge it. Let me merge.
+
+Let me check status first.
+
+PR **#6** is open. Now merging it as instructed.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:23:16.956Z">2026-11-08T18:23:16.956Z</time></header>
+  <div class="content">Merged as 2d2b51f. Now update memory and stop, awaiting confirmation.
+
+Let me update the task tracker and memory, then report.
+
+Let me sync main locally.
+
+PR #6 merged as `2d2b51f`. Let me sync `main` and record progress.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> task_tracker<time datetime="2026-11-08T18:23:29.170Z">2026-11-08T18:23:29.170Z</time></summary>
+  <pre>**Command:** `plan`
+
+**Task List (10 items):**
+
+1. ✅ **[DONE]** PR#1 / Phase 0+1 — Branch, baseline, green done tick + live task list
+   *Notes: DONE. PR #6 merged as 2d2b51f. Green done tick in both task items; live newest-plan test; app-shell detection + settings link resolver wired into CloudSettingsLink, IntegrationsSettingsLink, sidebar. lint/test/build green.*
+2. ✅ **[DONE]** PR#1 / Phase 2 — In-app settings (no external browser)
+   *Notes: DONE in PR #6: settings links resolve per environment; cross-origin dropped inside the app shell.*
+3. ⏳ **[TODO]** PR#2 / Phase 3 — Model-aware thinking status
+   *Notes: AWAITING USER CONFIRMATION before starting. typing-indicator: &#039;&lt;Model&gt; is thinking…&#039; for DeepSeek models.*
+4. ⏳ **[TODO]** PR#2 / Phase 4 — Oli presence indicator
+   *Notes: Blue animated robot head beside white orb; &#039;Oli and DeepSeek are thinking&#039;.*
+5. ⏳ **[TODO]** PR#3 / Phase 5 — Discord in recommended automations + icon
+   *Notes: Discord card in recommended rail + bundled Discord icon.*
+6. ⏳ **[TODO]** PR#3 / Phase 6 — Discord bot token entry
+   *Notes: Bot-token field in Discord setup -&gt; DISCORD_BOT_TOKEN secret.*
+7. ⏳ **[TODO]** PR#4 / Phase 7 — Setting: prevent sandbox close
+   *Notes: New app setting -&gt; keep_alive on launch.*
+8. ⏳ **[TODO]** PR#4 / Phase 8 — Advanced tools + cloud terminal (SDK)
+   *Notes: SDK: upgrade tool defs, add remote cloud-sandbox terminal test tool, agent awareness.*
+9. ⏳ **[TODO]** PR#5 / Phase 9 — Oli coding agent (SDK)
+   *Notes: SDK: real registered sub-agent &#039;Oli&#039; with doc/png/zip/txt tools.*
+10. ⏳ **[TODO]** PR#5 / Phase 10 — DeepSeek thinking support (litellm)
+   *Notes: litellm: DeepSeek v4 thinking/streaming support.*</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:23:33.348Z">2026-11-08T18:23:33.348Z</time></header>
+  <div class="content">The task_tracker update had a malformed entry (one had status &quot;todo&quot; as notes). Let me fix that quickly. Actually the plan call succeeded with 10 items. Let me re-view and fix the malformed item #6.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> task_tracker<time datetime="2026-11-08T18:23:33.368Z">2026-11-08T18:23:33.368Z</time></summary>
+  <pre>**Command:** `plan`
+
+**Task List (10 items):**
+
+1. ✅ **[DONE]** PR#1 / Phase 0+1 — Green done tick + live task list
+   *Notes: DONE. PR #6 merged as 2d2b51f.*
+2. ✅ **[DONE]** PR#1 / Phase 2 — In-app settings (no external browser)
+   *Notes: DONE in PR #6.*
+3. ⏳ **[TODO]** PR#2 / Phase 3 — Model-aware thinking status
+   *Notes: AWAITING CONFIRMATION. &#039;&lt;Model&gt; is thinking…&#039; for DeepSeek models.*
+4. ⏳ **[TODO]** PR#2 / Phase 4 — Oli presence indicator
+   *Notes: Blue animated robot head beside white orb; &#039;Oli and DeepSeek are thinking&#039;.*
+5. ⏳ **[TODO]** PR#3 / Phase 5 — Discord in recommended automations + icon
+   *Notes: Discord card in recommended rail + bundled Discord icon.*
+6. ⏳ **[TODO]** PR#3 / Phase 6 — Discord bot token entry
+   *Notes: Bot-token field in Discord setup -&gt; DISCORD_BOT_TOKEN secret.*
+7. ⏳ **[TODO]** PR#4 / Phase 7 — Setting: prevent sandbox close
+   *Notes: New app setting -&gt; keep_alive on launch.*
+8. ⏳ **[TODO]** PR#4 / Phase 8 — Advanced tools + cloud terminal (SDK)
+   *Notes: SDK: upgrade tool defs, remote cloud-sandbox terminal test tool, agent awareness.*
+9. ⏳ **[TODO]** PR#5 / Phase 9 — Oli coding agent (SDK)
+   *Notes: SDK: real registered sub-agent &#039;Oli&#039; with doc/png/zip/txt tools.*
+10. ⏳ **[TODO]** PR#5 / Phase 10 — DeepSeek thinking support (litellm)
+   *Notes: litellm: DeepSeek v4 thinking/streaming support.*</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T18:23:40.514Z">2026-11-08T18:23:40.514Z</time></header>
+  <div class="content">## PR #1 done and merged ✅
+
+**PR #6** — &quot;Live task list with green done tick, and settings that stay in the app&quot; — merged to `main` as `2d2b51f`.
+https://github.com/Lynxifyy/FreeHands/pull/6
+
+### Phase 1 — Task list (done)
+- A completed task now shows a **green tick** (`text-success`) instead of grey, in both the chat plan card and the Task list tab.
+- The list was already re-derived from the newest plan, so it updates automatically as the agent finishes steps. That &quot;newest plan wins&quot; contract is now locked down by a test so it can&#039;t regress.
+
+### Phase 2 — Real app (done)
+- Cloud settings links (&quot;All Cloud Settings&quot;, &quot;Cloud Integrations&quot;, collapsed sidebar gear) no longer blindly open a browser. A new resolver decides per link:
+  - same-origin / locked-to-Cloud → navigates **in place** (Back returns to the canvas),
+  - cross-origin in a browser → new tab,
+  - cross-origin **inside the packaged app** (Android WebView / Electron) → dropped, instead of handing you to a browser the app can&#039;t drive.
+
+### Verification
+- `npm run lint` — 0 errors (700 pre-existing warnings only)
+- `npm test` — all touched suites green (1263 tests in the affected areas; full suite is ~11 min)
+- `npm run build` — passes
+- New tests: `use-task-list.test.ts`, `task-list-section.test.tsx` (green tick), `app-shell.test.ts`, `app-settings-link.test.ts`
+
+### Notes
+- Commits authored as `Lynxifyy` with no co-authors, per your directive.
+- The `HUMAN:` section of the PR body was left untouched (empty) — it&#039;s reserved for you.
+
+## ⏸️ Stopping here for your confirmation
+
+Per your &quot;do 2 phases then stop&quot; instruction, I&#039;m holding before the next PR.
+
+**Next up — PR #2 (Phases 3 + 4):**
+- Phase 3: thinking status becomes model-aware — &quot;DeepSeek is thinking…&quot; when a DeepSeek model is active.
+- Phase 4: a blue animated robot head beside the white thinking orb, shown only while Oli is thinking or writing code; chip reads &quot;Oli and DeepSeek are thinking&quot; when both are active.
+
+One heads-up for Phase 4: the blue robot head needs a signal for &quot;Oli is actively helping&quot;. Since Oli is a delegated sub-agent (SDK side, Phase 9), the cleanest trigger is a delegation event — but that event type doesn&#039;t exist until Phase 9 lands. To keep PR #2 shippable on its own, I&#039;ll build the indicator against a small, well-defined &quot;Oli active&quot; signal (an event/store flag) and wire it to the real delegation event in Phase 9.
+
+Say **&quot;continue&quot;** (or give corrections) and I&#039;ll start PR #2.</div>
+</section>
+<section class="message user">
+  <header><h2>User</h2><time datetime="2026-11-08T21:26:56.389Z">2026-11-08T21:26:56.389Z</time></header>
+  <div class="content">Continue</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:27:10.012Z">2026-11-08T21:27:10.012Z</time></header>
+  <div class="content">The user says &quot;Continue&quot; — so I start PR #2 (Phases 3 + 4).
+
+Phase 3: Model-aware thinking status — &quot;DeepSeek is thinking…&quot; when a DeepSeek model is active.
+Phase 4: Blue animated robot head beside the white thinking orb, shown only while Oli is thinking or writing code; chip reads &quot;Oli and DeepSeek are thinking&quot; when both are active.
+
+Let me first create a new branch off main. Then explore the current state of typing-indicator.tsx and related files, and design.
+
+Let me plan the work:
+
+Phase 3:
+- The typing indicator currently shows `THINKING_ACTIVITY` = translation key `ACTION_MESSAGE$THINK` (&quot;Thinking&quot;) when no specific action.
+- I need: when the active model is a DeepSeek model, show &quot;&lt;Model&gt; is thinking…&quot;. E.g., &quot;DeepSeek is thinking…&quot;.
+- I need to determine the active model. The conversation has `llm_model`. Also there is `useChatInputModelState` / `useChatInputLlmProfileState`. For the typing indicator in chat-interface, we have access to `allConversationEvents` and the conversation. Let me check how to get the model.
+
+Let me design a hook `useActiveThinkingModel()` or reuse existing. Actually the typing-indicator is rendered in chat-interface.tsx. Let me look at what data is available there.
+
+Let me explore.
+
+Phase 4:
+- Blue animated robot head component (like thinking-orb but blue robot). Show only when Oli is actively helping (thinking or writing code).
+- The chip should show &quot;Oli and DeepSeek are thinking&quot; when both Oli active and a deepseek model is active.
+
+I need an &quot;Oli active&quot; signal. Since Oli is a sub-agent (SDK side, Phase 9), I&#039;ll build a store/event flag. The user said the signal should be when Oli is thinking or actively writing code.
+
+Design decision: I&#039;ll create a store `oli-activity-store` with an &quot;active&quot; flag that is set/cleared based on events. But without the real delegation event, what drives it? I could derive it from events: a task/delegate action with tool name &quot;oli&quot; or sub-agent name &quot;oli&quot;. Hmm.
+
+Actually, let me think about how the SDK delegation works. There&#039;s a `TaskAction` / delegate tool. When the main agent delegates to a sub-agent named Oli, there would be a `TaskAction` (or `DelegateAction`) with a subagent name. Let me look at the SDK to understand the delegate tool and what event it produces.
+
+Let me check `openhands-tools/openhands/tools/delegate` and `subagent`.
+
+Actually, since Phase 9 (SDK Oli agent) comes later, for Phase 4 I should build the frontend indicator against a signal that I can populate now and refine in Phase 9. The cleanest: derive &quot;Oli active&quot; from events — when there&#039;s an in-flight delegation to the &quot;oli&quot; sub-agent. Let me look at what the delegate tool produces as an action.
+
+Let me explore the SDK&#039;s delegate tool and the frontend&#039;s handling of TaskAction.
+
+Let me start by creating the branch and exploring.
+
+Actually let me be efficient: create branch, then read the relevant files.
+
+Let me do it.
+
+Key files to read:
+- src/components/features/chat/typing-indicator.tsx (already read)
+- src/components/features/chat/chat-interface.tsx around line 700 (read)
+- how model is available: useActiveConversation -&gt; conversation.llm_model; also there&#039;s `formatModelNameForDisplay`.
+- src/hooks/use-chat-input-model-state.ts, use-chat-input-llm-profile-state.ts
+- The i18n keys: ACTION_MESSAGE$THINK
+- thinking-orb.tsx (read)
+
+For &quot;DeepSeek is thinking&quot;, I need the display name of the model. There&#039;s `formatModelNameForDisplay(profile.model, freeModels)`. And `formatNativeModelName`. Let me check `src/utils/format-model-name.ts`.
+
+Let me explore these.
+
+Also for the robot head, I need a blue animated robot SVG component. There&#039;s `src/icons/robot.svg` and `u-robot.svg`. I can create a new component `oli-orb.tsx` similar to thinking-orb.tsx but with a blue robot head and status-based animation.
+
+&quot;blue animated (depending on status) robot head&quot; — animation depends on status. Statuses: thinking, writing code. So maybe:
+- thinking: pulsing eyes / bobbing
+- writing: faster blink or a &quot;typing&quot; animation
+
+Let me design an `OliOrb` component with a `status: &quot;thinking&quot; | &quot;coding&quot;` prop.
+
+Let me now check the CSS animations defined (thinking-orb-blink, thinking-orb-look) in tailwind.css or index.css.
+
+Let me read.
+
+Let me start executing.
+
+Starting PR #2 (Phases 3 + 4). First, the branch and the exploration I need.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:32:15.647Z">2026-11-08T21:32:15.647Z</time></header>
+  <div class="content">Good — there&#039;s `src/utils/format-model-name.test.ts` (colocated) with `isDeepSeekModel`/`deepSeekModelLabel` tests. I&#039;ll add tests there for a new `thinkingModelLabel` helper.
+
+Now let me write the code. Plan for Phase 3:
+
+**`src/utils/format-model-name.ts`** — add:
+```ts
+/**
+ * The name to use in the live &quot;thinking&quot; status for `model` when it is a
+ * DeepSeek model, else null. Prefers the static label; otherwise title-cases
+ * the route&#039;s last segment so an unlisted DeepSeek variant still reads as a
+ * product name (&quot;DeepSeek V4.5&quot;) rather than a raw id.
+ */
+export function thinkingModelLabel(model) {
+  if (!isDeepSeekModel(model)) return null;
+  const known = deepSeekModelLabel(model);
+  if (known) return known;
+  const last = model.split(&quot;/&quot;).pop() ?? &quot;&quot;;
+  return `DeepSeek ${last.replace(/^deepseek[-_]?/i, &quot;&quot;).replace(/[-_]/g, &quot; &quot;).replace(/\b\w/g, c=&gt;c.toUpperCase())}`.trim();
+}
+```
+Hmm, that title-casing is fiddly. Let me keep it simpler: for unlisted, just use &quot;DeepSeek&quot;. Actually the user said &quot;if the user is using a deepseek model it says Deepseek is thinking&quot;. So the simplest correct behavior: any DeepSeek model → &quot;DeepSeek is thinking…&quot;. For known models we can be nicer with the full label. But &quot;DeepSeek V4.1 Flash is thinking…&quot; is also fine.
+
+Let me implement:
+```ts
+export function thinkingModelLabel(model) {
+  if (!isDeepSeekModel(model)) return null;
+  return deepSeekModelLabel(model) ?? &quot;DeepSeek&quot;;
+}
+```
+Simple, correct, testable. For unlisted DeepSeek models → &quot;DeepSeek&quot;.
+
+Wait, but &quot;openhands/deepseek-v4-flash&quot; is in FREE_OPENHANDS_MODELS and DEEPSEEK_MODEL_LABELS has &quot;deepseek/deepseek-v4-flash&quot;. isDeepSeekModel(&quot;openhands/deepseek-v4-flash&quot;) → last = &quot;deepseek-v4-flash&quot; → startsWith deepseek → true. deepSeekModelLabel(&quot;openhands/deepseek-v4-flash&quot;) → DEEPSEEK_MODEL_LABELS[&quot;openhands/deepseek-v4-flash&quot;] → undefined → null. So falls back to &quot;DeepSeek&quot;. Hmm, that misses the nice label for the recommended model `openhands/deepseek-v4.1-flash` (RECOMMENDED_DEEPSEEK_MODEL). The user runs this model. DEEPSEEK_MODEL_LABELS has &quot;deepseek/deepseek-v4.1-flash&quot; but the recommended is &quot;openhands/deepseek-v4.1-flash&quot;. So the label lookup misses.
+
+Better: also match by the last segment. Let me build `thinkingModelLabel` to look up by full id, then by last segment:
+
+```ts
+const byLastSegment = new Map(Object.entries(DEEPSEEK_MODEL_LABELS).map(([id, label]) =&gt; [id.split(&quot;/&quot;).pop()!, label]));
+
+export function thinkingModelLabel(model) {
+  if (!isDeepSeekModel(model)) return null;
+  const known = deepSeekModelLabel(model) ?? byLastSegment.get(model.split(&quot;/&quot;).pop() ?? &quot;&quot;);
+  return known ?? &quot;DeepSeek&quot;;
+}
+```
+That yields &quot;DeepSeek V4.1 Flash&quot; for &quot;openhands/deepseek-v4.1-flash&quot;. 
+
+Now the typing indicator. `TypingIndicator` gets a `modelLabel: string | null` prop. It renders:
+- If activity is a concrete action → show the action (as today).
+- If activity is THINKING (the fallback) AND modelLabel → show &quot;{{model}} is thinking…&quot;.
+
+Actually, re-reading the user: &quot;update thinking status to be more advanced so if the user is using a deepseek model it says Deepseek is thinking..&quot; — so specifically when thinking (not when running a command). So: only when the derived activity is the generic THINKING_ACTIVITY do we show the model-aware text.
+
+Implementation in TypingIndicator:
+```ts
+const isThinking = activity.kind === &quot;translation&quot; &amp;&amp; activity.key === &quot;ACTION_MESSAGE$THINK&quot;;
+const thinkingLabel = isThinking ? modelLabel : null;
+...
+{thinkingLabel ? t(I18nKey.ACTION_MESSAGE$THINKING_MODEL, { model: thinkingLabel }) : (activity.kind === &quot;text&quot; ? ... : &lt;Trans .../&gt;)}
+```
+
+Wait, &quot;ACTION_MESSAGE$THINKING_MODEL&quot; = &quot;{{model}} is thinking…&quot;. t() with interpolation.
+
+Hmm, but the global vitest mock `t: (key) =&gt; key` ignores interpolation. In real app i18next interpolates. For tests I&#039;ll pass a real-ish t. Actually the typing-indicator.test.ts tests `deriveLiveActivity` (pure function) only — no component render. I&#039;ll add component render tests in a new test or extend. Let me add component tests to verify the label appears. I&#039;ll mock useTranslation to interpolate.
+
+Now for Oli (Phase 4). Let me design the &quot;Oli active&quot; signal. Options:
+(a) Derive from events: if there&#039;s an unresolved `TaskAction` with `subagent_type === &quot;oli&quot;` (or Oli-ish), Oli is active. But Phase 9 defines Oli; the subagent_type would be &quot;oli&quot;.
+(b) A store flag.
+
+The user chose &quot;A&quot; for Oli = registered sub-agent, and &quot;the signal should be when Oli is thinking or actively writing code&quot;. So Oli&#039;s activity is best derived from the event stream: a `TaskAction` delegating to the Oli subagent is &quot;Oli is thinking&quot;; while that delegation is unresolved (no matching `TaskObservation` yet), Oli is working. That&#039;s a real signal that works as soon as the SDK ships Oli (Phase 9) — and it degrades gracefully now (no Oli → no robot head).
+
+But is that &quot;actively writing code&quot;? The parent&#039;s TaskAction is a single blocking call; the subagent&#039;s own events may or may not stream into the parent. In the SDK, a subagent run may emit its events... uncertain. To be robust and forward-compatible, I&#039;ll implement a small, well-defined predicate: `isOliActive(events)` that is true when the most recent unresolved delegation targets the Oli subagent. I&#039;ll define the Oli subagent name as a constant `OLI_SUBAGENT_NAME = &quot;oli&quot;` in a shared place, and a `isOliSubagent(name)` that matches case-insensitively (&quot;oli&quot;, &quot;Oli&quot;, &quot;oli-coder&quot;). Phase 9 will register the agent under that exact name.
+
+Additionally, to satisfy &quot;actively writing code&quot;, I can treat Oli as active also when a `FileEditorAction`/`StrReplaceEditorAction` is unresolved *while* an Oli delegation is open. But simpler: while Oli&#039;s delegation is unresolved, Oli is working (thinking or writing). That covers both.
+
+Hmm, but is deriving from `TaskAction` good enough? The `deriveLiveActivity` already returns the TaskAction title (e.g. &quot;Delegating to oli&quot;). So when Oli is working, the chip shows the delegation. Adding the robot head beside it is the ask.
+
+So:
+- `isOliActive(events)`: scan from the end; find the latest `TaskAction` with `subagent_type` matching Oli that has no matching resolved observation → true. Otherwise false.
+
+I&#039;ll put this in a new module `src/utils/oli.ts` (or `src/constants/oli.ts` + derivation in typing-indicator). Let me create `src/utils/oli-activity.ts` with:
+```ts
+export const OLI_SUBAGENT_NAME = &quot;oli&quot;;
+export function isOliSubagent(subagentType: string | null | undefined): boolean
+export function isOliActive(events: readonly OHEvent[]): boolean
+```
+
+`isOliActive` mirrors `deriveLiveActivity`&#039;s resolution logic: track resolved action ids (observations) and tool_call_ids; find the newest unresolved TaskAction whose subagent_type is Oli.
+
+Then `TypingIndicator` renders `&lt;OliRobotHead active={isOliActive(events)} /&gt;` when active, and the chip text becomes &quot;Oli and {{model}} are thinking…&quot; when both Oli active and model is DeepSeek, or &quot;Oli is thinking…&quot; when only Oli. Hmm, but if Oli is active and the model is not DeepSeek, text = &quot;Oli is thinking…&quot;? The user: &quot;if Oli is working with it, then it should show the blue animated robot head beside the white thinking head and shows Oli and deepseek are thinking.&quot; So specifically DeepSeek + Oli → &quot;Oli and DeepSeek are thinking&quot;. Let me handle:
+- Oli active + DeepSeek → &quot;Oli and {{model}} are thinking…&quot;
+- Oli active + non-DeepSeek → &quot;Oli is thinking…&quot; (generic, still nice)
+- Oli inactive + DeepSeek → &quot;{{model}} is thinking…&quot;
+- else → existing behavior.
+
+Actually simpler and matching the ask: 
+- when Oli active: text = modelLabel ? t(OLI_AND_MODEL_THINKING, {model}) : t(OLI_THINKING)
+- else when modelLabel: t(MODEL_THINKING, {model})
+- else: existing Trans.
+
+The blue robot head shows whenever Oli is active (regardless of model).
+
+Now the robot head component. A blue animated robot head SVG. Requirements: &quot;blue animated (depending on status) robot head&quot;. &quot;depending on status&quot; — animate differently by status. Statuses: thinking vs writing? Let me support a `status: &quot;thinking&quot; | &quot;working&quot;` prop that changes the animation (e.g., pulse for thinking, a scanning/bounce for working). Deriving &quot;writing code&quot; vs &quot;thinking&quot; from events: if the latest unresolved action is a file-editor/str_replace → &quot;working&quot; (writing), else &quot;thinking&quot;. I can compute that in `isOliActive` → return a status, or a separate helper `oliActivity(events): &quot;thinking&quot; | &quot;writing&quot; | null`.
+
+Let me make `oliActivity(events): OliActivity | null` where OliActivity = &quot;thinking&quot; | &quot;working&quot;. Hmm, but the TaskAction itself is the only Oli-related event; the subagent&#039;s internal file edits may not surface. To keep it real and simple: while an Oli delegation is open, if the parent&#039;s latest action is a code-writing action → &quot;working&quot;, else &quot;thinking&quot;. That&#039;s a bit hand-wavy.
+
+Simpler, defensible design: the robot head has two animation states driven by a `status` prop: &quot;thinking&quot; (gentle pulse/eyes scanning) and &quot;coding&quot; (faster bob + a typing cursor). The TypingIndicator computes status from the current live activity: if the live activity is a code-writing action (FileEditor/StrReplace) → &quot;coding&quot;, else &quot;thinking&quot;. Since the robot head only shows when Oli is active, this gives &quot;blue animated (depending on status)&quot;. Good.
+
+Let me define in typing-indicator:
+```ts
+const isCodeWritingActivity = (descriptor) =&gt; descriptor.kind === &quot;translation&quot; &amp;&amp; (key === &quot;ACTION_MESSAGE$EDIT&quot; ...)
+```
+Hmm, fragile. Let me instead have `deriveLiveActivity` also expose the raw action kind. Actually, I can compute Oli status from the events directly in a helper: `deriveOliStatus(events): &quot;thinking&quot; | &quot;coding&quot; | null` that returns null when Oli isn&#039;t active.
+
+Let me write `src/utils/oli-activity.ts`:
+```ts
+export type OliStatus = &quot;thinking&quot; | &quot;coding&quot;;
+
+const CODE_WRITING_KINDS = new Set([&quot;FileEditorAction&quot;, &quot;StrReplaceEditorAction&quot;]);
+
+export function deriveOliStatus(events): OliStatus | null {
+  // find newest unresolved TaskAction targeting Oli
+  // ... if found, look at the newest unresolved action overall:
+  //     if it&#039;s a code-writing kind -&gt; &quot;coding&quot; else &quot;thinking&quot;
+}
+```
+Hmm, when Oli is delegated, the newest unresolved action is the TaskAction itself, not a file edit. So status would always be &quot;thinking&quot;. Unless the subagent&#039;s events stream in.
+
+I think I&#039;m overcomplicating. Let me reconsider: perhaps a cleaner &quot;Oli active&quot; signal that the user can see now is a **client tool** approach... no.
+
+Given the user chose sub-agent (A) and the SDK work is Phase 9, the honest approach: build the indicator driven by a small, explicit signal that Phase 9 will populate. Two reasonable signals:
+1. An Oli delegation `TaskAction` being open (works with Phase 9).
+2. A dedicated store flag set by the Oli tool runner.
+
+I&#039;ll go with (1) — derive from events — because it needs no new store and is real. For &quot;depending on status&quot;, I&#039;ll map: open Oli delegation → &quot;thinking&quot;; and if while it&#039;s open the newest unresolved action is a code-writing action → &quot;coding&quot;. Even if &quot;coding&quot; rarely triggers today, it&#039;s correct and forward-compatible when subagent events surface. That&#039;s defensible, not scaffolding.
+
+Hmm, actually, let me reconsider once more. There&#039;s a subtlety: the parent agent&#039;s `TaskAction` is blocking. While it runs, does the parent emit other actions? No — the parent is blocked. So during Oli&#039;s work, the only signal is the TaskAction. So the status would be &quot;thinking&quot; the whole time. That&#039;s fine — the head pulses blue. &quot;depending on status&quot; is satisfied by the two-state design (thinking/coding) even if coding is rare.
+
+Actually — maybe better: the robot head&#039;s status could reflect whether Oli is *currently* running vs *idle*: &quot;thinking&quot; while Oli works, and it disappears when Oli is done. That&#039;s already the design (only shows while active).
+
+Let me finalize: robot head has `status: &quot;thinking&quot; | &quot;coding&quot;`, two CSS animations. TypingIndicator passes `deriveOliStatus(events)`.
+
+Now, naming: the subagent name. I&#039;ll define `OLI_SUBAGENT_NAME = &quot;oli&quot;` and match case-insensitively, also accepting &quot;oli-coder&quot;/&quot;oli_coder&quot;. Let me keep it: `isOliSubagent(t) = /^oli([-_]|$)/i.test(t.trim())` or `t.trim().toLowerCase() === &quot;oli&quot;`. The SDK registers agents by name; Phase 9 will register &quot;oli&quot;. I&#039;ll accept &quot;oli&quot; and any &quot;oli-*&quot;/&quot;oli_*&quot; variant.
+
+OK let me now write all the code. Let me start with the util changes + tests (TDD), then components.
+
+Let me first add `thinkingModelLabel` to format-model-name.ts and tests.
+
+Actually, wait. Let me reconsider `deriveOliStatus` naming and where Oli constants live. The user calls it &quot;a coding agent called Oli&quot;. I&#039;ll create `src/constants/oli.ts` with the name + helper, and `src/utils/oli-activity.ts` with the derivation. Or put both in one file `src/utils/oli-activity.ts` with the constant exported. Keep it one file to avoid sprawl.
+
+Let me write tests first.
+
+Let me check the `deriveLiveActivity` export so I can reuse resolution logic. Actually `isOliActive` needs its own scan. I&#039;ll implement it independently but consistently.
+
+Let me write the tests for oli-activity:
+- empty events → null
+- open TaskAction targeting &quot;oli&quot; → &quot;thinking&quot;
+- TaskAction targeting &quot;oli&quot; + matching TaskObservation → null
+- TaskAction targeting &quot;other&quot; → null
+- open TaskAction targeting &quot;oli&quot; plus a newer unresolved FileEditorAction → &quot;coding&quot;
+
+Wait, &quot;newer unresolved FileEditorAction&quot; can&#039;t happen while the TaskAction is open in a real conversation, but the function should still be well-defined. Let me define: if Oli delegation is open, status = &quot;coding&quot; when there&#039;s any unresolved code-writing action among the events (not necessarily newer), else &quot;thinking&quot;. Hmm. Simpler: status = &quot;coding&quot; if the most recent *unresolved* action (by scanning from the end) is a code-writing kind, else &quot;thinking&quot;. When only the TaskAction is unresolved, the most recent unresolved is the TaskAction → &quot;thinking&quot;. Good.
+
+Let me just implement: 
+1. Compute resolved action ids/tool_call_ids from observations.
+2. Find newest unresolved TaskAction with Oli subagent → if none, return null.
+3. Determine the newest unresolved action in the list; if it&#039;s code-writing → &quot;coding&quot;, else &quot;thinking&quot;.
+
+For step 3, the newest unresolved action is likely the TaskAction itself (which is not code-writing) → &quot;thinking&quot;. If a subagent&#039;s file edit streamed in and is unresolved → &quot;coding&quot;. 
+
+Let me code it.
+
+Now let me write everything. First, format-model-name additions + test.
+
+Now let me implement Phase 3. Adding the model-aware thinking label (TDD).</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:32:43.773Z">2026-11-08T21:32:43.773Z</time></header>
+  <div class="content">Now add the i18n keys and the typing-indicator changes. Let me write a Python script to add the translation keys, then update typing-indicator.
+
+Let me add translations for:
+- `ACTION_MESSAGE$MODEL_THINKING`: &quot;{{model}} is thinking…&quot; with all locales
+- `THINKING$OLI_AND_MODEL`: &quot;Oli and {{model}} are thinking…&quot;
+- `THINKING$OLI_AND_AGENT`: &quot;Oli and the agent are thinking…&quot;
+- `THINKING$OLI`: &quot;Oli is thinking…&quot;
+
+Also I need `THINKING$OLI_NAME` = &quot;Oli&quot;? No, name is a constant. Use &quot;Oli&quot; hardcoded via a constant `OLI_NAME`.
+
+For ellipsis, use &quot;…&quot;. Let me write the translations.
+
+I&#039;ll append these keys near the end of translation.json. Order matters for readability but not correctness. The keys are alphabetically sorted? Looking at the file, keys appear sorted alphabetically (FILES$DISCOVERY first, ACTION_MESSAGE later... actually 20342 ACTION_MESSAGE, 37244 THINKING — so it IS alphabetically sorted). Let me check: the file starts with FILES$DISCOVERY_SETTINGS which is not alphabetical. Hmm, maybe it&#039;s sorted by insertion but roughly grouped. Let me check make-i18n and whether there&#039;s a sort.
+
+Actually the safest is to insert new keys in a sensible place (e.g., near ACTION_MESSAGE$THINK for ACTION_MESSAGE$MODEL_THINKING, and near THINKING$TITLE for the OLI keys). Let me use Python to insert.
+
+Let me write the Python script to add all four keys with all 16 locales.
+
+Translations:
+
+ACTION_MESSAGE$MODEL_THINKING (en: &quot;{{model}} is thinking…&quot;):
+- zh-CN: &quot;{{model}} 正在思考…&quot;
+- zh-TW: &quot;{{model}} 正在思考…&quot;
+- ko-KR: &quot;{{model}}이(가) 생각 중…&quot;
+- ja: &quot;{{model}} が考えています…&quot;
+- no: &quot;{{model}} tenker…&quot;
+- ar: &quot;{{model}} يفكّر…&quot;
+- de: &quot;{{model}} denkt nach…&quot;
+- fr: &quot;{{model}} réfléchit…&quot;
+- it: &quot;{{model}} sta pensando…&quot;
+- pt: &quot;{{model}} está pensando…&quot;
+- es: &quot;{{model}} está pensando…&quot;
+- tr: &quot;{{model}} düşünüyor…&quot;
+- uk: &quot;{{model}} обмірковує…&quot;
+- ca: &quot;{{model}} està pensant…&quot;
+- id: &quot;{{model}} sedang berpikir…&quot;
+
+THINKING$OLI_AND_MODEL (en: &quot;Oli and {{model}} are thinking…&quot;):
+- zh-CN: &quot;Oli 和 {{model}} 正在思考…&quot;
+- zh-TW: &quot;Oli 和 {{model}} 正在思考…&quot;
+- ko-KR: &quot;Oli와 {{model}}이(가) 생각 중…&quot;
+- ja: &quot;Oli と {{model}} が考えています…&quot;
+- no: &quot;Oli og {{model}} tenker…&quot;
+- ar: &quot;Oli و{{model}} يفكّران…&quot;
+- de: &quot;Oli und {{model}} denken nach…&quot;
+- fr: &quot;Oli et {{model}} réfléchissent…&quot;
+- it: &quot;Oli e {{model}} stanno pensando…&quot;
+- pt: &quot;Oli e {{model}} estão pensando…&quot;
+- es: &quot;Oli y {{model}} están pensando…&quot;
+- tr: &quot;Oli ve {{model}} düşünüyor…&quot;
+- uk: &quot;Oli і {{model}} обмірковують…&quot;
+- ca: &quot;Oli i {{model}} estan pensant…&quot;
+- id: &quot;Oli dan {{model}} sedang berpikir…&quot;
+
+THINKING$OLI_AND_AGENT (en: &quot;Oli and the agent are thinking…&quot;):
+- zh-CN: &quot;Oli 和助手正在思考…&quot;
+- zh-TW: &quot;Oli 和助理正在思考…&quot;
+- ko-KR: &quot;Oli와 에이전트가 생각 중…&quot;
+- ja: &quot;Oli とエージェントが考えています…&quot;
+- no: &quot;Oli og agenten tenker…&quot;
+- ar: &quot;Oli والوكيل يفكّران…&quot;
+- de: &quot;Oli und der Agent denken nach…&quot;
+- fr: &quot;Oli et l&#039;agent réfléchissent…&quot;
+- it: &quot;Oli e l&#039;agente stanno pensando…&quot;
+- pt: &quot;Oli e o agente estão pensando…&quot;
+- es: &quot;Oli y el agente están pensando…&quot;
+- tr: &quot;Oli ve ajan düşünüyor…&quot;
+- uk: &quot;Oli і агент обмірковують…&quot;
+- ca: &quot;Oli i l&#039;agent estan pensant…&quot;
+- id: &quot;Oli dan agen sedang berpikir…&quot;
+
+THINKING$OLI (en: &quot;Oli is thinking…&quot;):
+- zh-CN: &quot;Oli 正在思考…&quot;
+- zh-TW: &quot;Oli 正在思考…&quot;
+- ko-KR: &quot;Oli가 생각 중…&quot;
+- ja: &quot;Oli が考えています…&quot;
+- no: &quot;Oli tenker…&quot;
+- ar: &quot;Oli يفكّر…&quot;
+- de: &quot;Oli denkt nach…&quot;
+- fr: &quot;Oli réfléchit…&quot;
+- it: &quot;Oli sta pensando…&quot;
+- pt: &quot;Oli está pensando…&quot;
+- es: &quot;Oli está pensando…&quot;
+- tr: &quot;Oli düşünüyor…&quot;
+- uk: &quot;Oli обмірковує…&quot;
+- ca: &quot;Oli està pensant…&quot;
+- id: &quot;Oli sedang berpikir…&quot;
+
+Now write the script.
+
+Wait: the i18n `Trans`/`t` interpolation uses `{{model}}`. Fine.
+
+Now typing-indicator changes:
+- Add `OLI_NAME = &quot;Oli&quot;` constant (in constants/oli.ts maybe, since Phase 4 also needs it). Let me create `src/constants/oli.ts` with `OLI_NAME = &quot;Oli&quot;` and `OLI_SUBAGENT_TYPE = &quot;oli&quot;`.
+- `deriveLiveActivity` returns a descriptor. Add `values.model` when the activity is THINKING_ACTIVITY and a deepseek model is present.
+- Add `oliActive` boolean to the chip.
+- Chip text logic.
+
+Let me restructure TypingIndicator:
+
+```tsx
+interface TypingIndicatorProps {
+  readonly events: readonly OHEvent[];
+  /** Model routing id of the conversation, used for the model-aware label. */
+  readonly model?: string | null;
+  /** Whether Oli (the coding sub-agent) is currently helping. */
+  readonly oliActive?: boolean;
+}
+```
+
+deriveLiveActivity(events, options?: { model?: string|null; oliActive?: boolean }).
+
+Hmm, tests call `deriveLiveActivity([event])`. Keep signature backward compatible: `deriveLiveActivity(events, context: LiveActivityContext = {})`.
+
+Return descriptor: `{ kind, key, values }`. For THINKING_ACTIVITY, add model name into values and possibly switch key.
+
+Let me define a function `thinkingActivity(model, oliActive)`:
+- if oliActive &amp;&amp; modelName: key = THINKING$OLI_AND_MODEL, values {model: modelName}
+- if oliActive: key = THINKING$OLI_AND_AGENT
+- if modelName: key = ACTION_MESSAGE$MODEL_THINKING, values {model: modelName}
+- else: key = ACTION_MESSAGE$THINK, values {}
+
+Where modelName = thinkingModelLabel(model) (null for non-deepseek).
+
+But careful: existing tests expect THINKING_ACTIVITY = {kind:&#039;translation&#039;, key:&#039;ACTION_MESSAGE$THINK&#039;, values:{}} when no context is passed. With default context (no model, no oli), it returns exactly that. Good — backward compatible.
+
+Now the chip: I need to know if the activity is a &quot;thinking&quot; (idle) state vs an action. I&#039;ll add a field to the descriptor? The descriptor already has `key`. I can compare `key` against the set of thinking keys. Let me add `isThinking: boolean` to the descriptor... but that changes the shape and existing tests use `toEqual` with exact object. If I add a field, those tests break.
+
+Existing tests do `expect(deriveLiveActivity([event])).toEqual({kind, key, values})`. Adding `isThinking` would break them. So avoid changing the shape for action descriptors. 
+
+Alternative: compute `isThinking` in the component by checking whether the returned key is one of the thinking keys. That keeps descriptor shape unchanged. 
+
+Let me do that: a small set `THINKING_KEYS = new Set([ACTION_MESSAGE$THINK, ACTION_MESSAGE$MODEL_THINKING, THINKING$OLI, THINKING$OLI_AND_MODEL, THINKING$OLI_AND_AGENT])`. If activity.kind === &#039;translation&#039; &amp;&amp; THINKING_KEYS.has(activity.key) → thinking (show Oli robot head).
+
+Good, no shape change.
+
+Now `values` for THINKING_ACTIVITY currently `{}`. For model thinking it&#039;s `{model}`. Existing test compares `values: {}`. Fine.
+
+Let me implement.
+
+Also need to render the model name via Trans with values — `Trans` supports values. Yes.
+
+Now for the chip layout: 
+```tsx
+&lt;div ... data-testid=&quot;live-activity-chip&quot; data-oli-active={oliActive}&gt;
+  &lt;ThinkingOrb size={16} className=&quot;mr-0.5&quot; /&gt;
+  {showOli &amp;&amp; &lt;OliHead size={16} /&gt;}
+  &lt;span&gt;...&lt;/span&gt;
+&lt;/div&gt;
+```
+
+Phase 4 adds OliHead. For now, add the prop and data attribute so Phase 4 can test. Actually Phase 4 is in the same PR, so I&#039;ll do both. Let me implement Phase 4&#039;s OliHead too.
+
+Let me now write everything: constants/oli.ts, oli-head.tsx, tailwind keyframes, typing-indicator changes, chat-interface wiring, translations.
+
+Let me write the test first though (TDD) for deriveLiveActivity model-awareness.
+
+Actually let me write the translation keys + helper first, then tests, then component. Let me be pragmatic: write tests, watch fail, implement.
+
+Let me write the deriveLiveActivity tests as additions to the existing test file.
+
+Let me view the end of the existing typing-indicator test to append.
+
+Now adding the i18n keys for the new thinking strings.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:34:03.989Z">2026-11-08T21:34:03.989Z</time></header>
+  <div class="content">Now let me implement Phase 3 + Phase 4.
+
+Phase 3: typing-indicator should show model-aware thinking. Add a prop `model?: string | null`. When activity is the generic THINKING_ACTIVITY and model is DeepSeek, show &quot;{{model}} is thinking…&quot;.
+
+Actually the user wants: &quot;update thinking status to be more advanced so if the user is using a deepseek model it says Deepseek is thinking..&quot;
+
+So when thinking (no specific action), and the model is DeepSeek, it shows &quot;DeepSeek V4.1 Flash is thinking…&quot; (or with the label). Let me use `thinkingModelLabel` to get the label, defaulting to &quot;DeepSeek&quot;.
+
+Phase 4: Oli presence. The signal for &quot;Oli is actively helping&quot; — per the user, &quot;when Oli is thinking or actively writing code&quot;. Oli is a registered sub-agent (Phase 9, SDK). The signal would be a `TaskAction` with `subagent_type === &quot;oli&quot;` in progress, or an active TaskObservation for Oli.
+
+For PR #2 to be self-contained, I&#039;ll define a well-defined &quot;Oli active&quot; signal: an `isOliActive(events)` helper that returns true when the latest unresolved action is a `TaskAction` delegating to the `oli` subagent (or an observation names it). Actually &quot;thinking or actively writing code&quot; — while Oli is delegated to (TaskAction unresolved), show the robot head. That&#039;s clean and testable now, and Phase 9 makes the SDK actually emit `subagent_type: &quot;oli&quot;`.
+
+Let me define a constant `OLI_SUBAGENT_TYPE = &quot;oli&quot;` in a constants file.
+
+Design:
+- New `OliOrb` component: blue animated robot head. Blue because it&#039;s the Oli agent (distinct from the white thinking orb). Animated depending on status (thinking/writing). aria-hidden, testid `oli-orb`.
+- `typing-indicator.tsx`: compute `oliActive` from events; if Oli active, show `&lt;OliOrb /&gt;` beside `&lt;ThinkingOrb /&gt;`. Chip text:
+  - Oli active + DeepSeek model → &quot;Oli and {{model}} are thinking…&quot; (THINKING$OLI_AND_MODEL)
+  - Oli active + non-DeepSeek/unknown model → &quot;Oli and the agent are thinking…&quot; (THINKING$OLI_AND_AGENT)
+  - Oli active but activity is a specific action? The user says &quot;shows Oli and deepseek are thinking&quot;. Let me handle: when Oli is active AND activity is the generic thinking (i.e., the task delegation), show combined. Hmm but when Oli is actively writing code, the activity may be a specific action.
+
+Let me keep it focused: the chip text is derived from `deriveLiveActivity`. If the derived activity is the generic THINKING_ACTIVITY (kind translation key ACTION_MESSAGE$THINK) then:
+  - if Oli active and model is DeepSeek → THINKING$OLI_AND_MODEL with model
+  - if Oli active → THINKING$OLI_AND_AGENT
+  - if model is DeepSeek → ACTION_MESSAGE$MODEL_THINKING with model
+  - else → THINKING
+If the derived activity is a specific action (e.g., &quot;Running npm test&quot;), keep it but still show the Oli orb beside the white orb when Oli active. The user said the blue robot head shows &quot;Only when Oli is actively helping&quot;, and &quot;shows Oli and deepseek are thinking&quot; when both. So combined text is for the thinking state.
+
+Let me implement.
+
+Actually, for the text when a specific action is happening AND Oli is active, showing the action text is right (&quot;Writing file X&quot;), with both orbs. Good.
+
+Now, the blue robot head &quot;animated (depending on status)&quot;. Statuses: thinking vs writing. Let me define two animation modes: &quot;thinking&quot; (pulse/float) and &quot;working&quot;/&quot;writing&quot; (faster bob). The OliOrb takes a `status: &quot;thinking&quot; | &quot;writing&quot;` prop. Determine status from the latest Oli-related activity: if Oli is executing a file editor action → writing; else thinking. Hmm, but the events are the parent&#039;s events, not Oli&#039;s internal ones. Simpler: derive from whether the live action is a file-editing action.
+
+Let me keep it well-defined:
+- `isOliActive(events)`: latest unresolved `TaskAction` with `subagent_type` equal to OLI_SUBAGENT_TYPE (case-insensitive). Once the TaskObservation for it arrives, it&#039;s resolved → not active.
+- `oliStatus(events)`: &quot;thinking&quot; if active. We can add &quot;writing&quot; when there&#039;s an unresolved FileEditorAction while Oli active — but that&#039;s the parent&#039;s action. Actually while Oli runs, the parent is blocked waiting, so there&#039;d be no parent FileEditorAction. So &quot;writing&quot; wouldn&#039;t occur from parent events.
+
+Hmm. Given Oli is a sub-agent, the parent is blocked during delegation, so we can&#039;t see Oli&#039;s internal file writes in the parent event stream. To honor &quot;animated depending on status&quot;, I&#039;ll make the animation driven by the live activity kind: &quot;writing&quot; when the current action is a file write/edit, else &quot;thinking&quot;. And when Oli is active the parent&#039;s live activity is the TaskAction (thinking). 
+
+I&#039;ll define the OliOrb `status` prop and animate: `thinking` = gentle pulse; `writing` = faster scan. Determine status via a helper `deriveOliStatus(events)` returning &quot;thinking&quot; | &quot;writing&quot; | null (null = not active). I&#039;ll make it &quot;writing&quot; when an unresolved FileEditorAction/StrReplaceEditorAction exists alongside Oli active (future-proof), else &quot;thinking&quot;.
+
+Let me write tests + implementation. Let me first add a constants file for Oli.
+
+Let me check if there&#039;s an existing constants dir pattern. Yes, src/constants/*.ts.
+
+Let me create src/constants/oli.ts.
+
+Then OliOrb component. Then update typing-indicator.
+
+Let me write the tests first for the derive functions (TDD).
+
+For deriveLiveActivity — I&#039;ll add the model/oli text resolution as a separate exported function `deriveLiveActivityChip(events, { model })` maybe. Actually the cleanest: keep `deriveLiveActivity` as is (returns descriptor), and add:
+- `isOliActive(events): boolean`
+- `deriveOliStatus(events): &quot;thinking&quot; | &quot;writing&quot; | null`
+- a function to compute the final chip text descriptor given the activity + model + oli state.
+
+Let me export `deriveLiveActivityChip(events, model)` returning `{ descriptor, oliStatus }`? Simpler: TypingIndicator composes them. But for testability, I&#039;ll export pure helpers.
+
+Plan:
+- `isOliActive(events)` in a new util `src/utils/oli-activity.ts` (pure, testable).
+- `deriveOliStatus(events)` in the same util.
+- TypingIndicator uses these + `thinkingModelLabel`.
+
+Let me write the test for oli-activity first.
+
+Actually, to keep everything cohesive and near the component, I&#039;ll put the Oli helpers in `src/components/features/chat/oli-orb.tsx`&#039;s sibling util `src/utils/oli-activity.ts`.
+
+Let me implement.
+
+First test file: __tests__/utils/oli-activity.test.ts.
+
+Let me define semantics precisely:
+
+```
+OLI_SUBAGENT_TYPE = &quot;oli&quot;
+
+isOliActive(events):
+  - walk from end; track resolved action ids and tool call ids (like deriveLiveActivity).
+  - Actually simpler: find the last unresolved action. If it&#039;s a TaskAction with subagent_type.toLowerCase() === &quot;oli&quot;, active.
+  - Use same resolution logic: an action is resolved when an observation/reject/error with matching action_id/tool_call_id exists later... 
+
+Hmm, need care: observations come after. Let me reuse the pattern from deriveLiveActivity: iterate from the end; first unresolved action encountered decides. But we need &quot;is the current live action an Oli task delegation&quot;.
+
+Let me implement:
+isOliActive(events):
+  - collect resolvedActionIds and resolvedToolCallIds by scanning all observations/reject/errors.
+  - find the last action event (from end) not resolved and not from planning agent.
+  - if that action is TaskAction and subagent_type matches oli → true.
+  
+But there&#039;s a subtlety: deriveLiveActivity also handles ACP tool calls. For Oli we only care about TaskAction. Also, while Oli runs, the parent&#039;s pending action IS the TaskAction (unresolved until TaskObservation arrives). Good.
+
+Actually, if the last unresolved action is something else after the TaskAction... e.g., parent can&#039;t act while Oli runs. So fine.
+
+But what if the parent issues TaskAction, then the TaskObservation arrives and then parent continues with other actions — the TaskAction is resolved, so not active. Good.
+
+deriveOliStatus(events): returns &quot;thinking&quot; | &quot;writing&quot; | null.
+  - if !isOliActive → null
+  - &quot;writing&quot; when there&#039;s an unresolved FileEditorAction/StrReplaceEditorAction (i.e., Oli is editing). Since we can&#039;t see Oli&#039;s internals, this is future-facing; default &quot;thinking&quot;.
+  
+Hmm, actually maybe simpler and honest: status is &quot;thinking&quot; while active. But the user explicitly wants the animation to depend on status. I&#039;ll support two statuses and drive &quot;writing&quot; from the live action kind, so if the SDK later streams Oli&#039;s sub-actions, it lights up. Let me define deriveOliStatus to look at the *current live action* (unresolved) and return &quot;writing&quot; if it&#039;s a file edit kind, else &quot;thinking&quot;. When Oli is active, the current live action is the TaskAction → &quot;thinking&quot;. That&#039;s fine and honest.
+
+Wait, that makes &quot;writing&quot; unreachable in practice. Let me instead derive status from the TaskAction&#039;s own prompt? No.
+
+Alternative: The user says &quot;blue animated (depending on status)&quot;. I&#039;ll interpret status as thinking vs. working, and derive &quot;writing&quot; when the live activity is a file-write action OR when an Oli task is in progress and the last observation/action suggests code writing. To keep it real and testable, I&#039;ll define:
+
+deriveOliStatus(events): 
+  - null if not active
+  - &quot;writing&quot; if the unresolved action is a file-editing action (FileEditorAction with create/str_replace/insert, or StrReplaceEditorAction)
+  - else &quot;thinking&quot;
+
+And note that with Oli as a sub-agent, &quot;writing&quot; appears once Oli&#039;s sub-actions are surfaced (Phase 9). That&#039;s a documented, testable contract.
+
+Hmm, but if Oli is active, the unresolved action is the TaskAction, never a file edit. So `isOliActive` and the file-edit check are mutually exclusive. Let me reconsider.
+
+Maybe better: Oli is active when there&#039;s a `TaskAction` delegating to oli that is unresolved. While active, status &quot;thinking&quot;. But we also want &quot;actively writing code&quot; to show the robot head. The user: &quot;the signal should be when Oli is thinking or actively writing code&quot;. So the signal (robot head visible) = Oli active (thinking OR writing). The animation depends on which.
+
+Given we can&#039;t observe Oli&#039;s internals in the parent stream, I&#039;ll define the status from the live activity descriptor: if the current live action is a code-writing action → &quot;writing&quot;, else &quot;thinking&quot;. And `isOliActive` independent. Then:
+- robot head shown when isOliActive OR current action is Oli&#039;s writing? No — that&#039;s the parent&#039;s writing.
+
+I think I&#039;m overcomplicating. Let me define a single source: a &quot;task delegation to oli&quot; is the signal. Status:
+- &quot;thinking&quot;: default while the delegation is unresolved.
+- &quot;writing&quot;: when the delegation&#039;s live activity (the parent&#039;s live action) is a file write — which won&#039;t happen.
+
+OK. Decision: I&#039;ll make status reflect the *live activity kind* generally, and the robot head is shown when Oli is active. I&#039;ll implement `deriveOliStatus` = &quot;thinking&quot; while active, and expose the `status` prop on OliOrb with two animation classes, defaulting to &quot;thinking&quot;, with &quot;writing&quot; reachable when the live action is a file edit (documented as the hook for streamed sub-actions). This is honest, tested, and future-proof. Let me make deriveOliStatus take the live activity into account:
+
+```
+deriveOliStatus(events):
+  if (!isOliActive(events)) return null
+  const live = deriveLiveActivity(events)  // circular import risk
+  ...
+```
+
+Circular: typing-indicator imports oli-activity; oli-activity importing typing-indicator would be circular. So I&#039;ll implement the &quot;live action kind&quot; resolution inside oli-activity itself (small duplication) or pass the action kind in.
+
+Simplest: `deriveOliStatus(events)` returns &quot;thinking&quot; | &quot;writing&quot; | null, where &quot;writing&quot; is when an unresolved file-write action exists. Since Oli active implies unresolved TaskAction, that&#039;s never &quot;writing&quot; simultaneously. To make &quot;writing&quot; reachable and meaningful, I&#039;ll instead say: Oli is &quot;writing&quot; when the Oli delegation is active AND the parent&#039;s most recent resolved... no.
+
+New approach — make it genuinely observable: The robot head + status should reflect the *sub-agent&#039;s* state. Since Phase 9 will emit Oli&#039;s sub-actions into the parent stream (the SDK&#039;s TaskObservation carries the result; sub-actions may be streamed as events with a subagent marker). I&#039;ll define the contract as: an event is &quot;from Oli&quot; when it&#039;s a TaskAction with subagent_type oli, or any event carrying `isFromSubAgent === &quot;oli&quot;`. Then:
+- isOliActive: an Oli-originated action is unresolved.
+- deriveOliStatus: &quot;writing&quot; if the unresolved Oli action is a file-write kind, else &quot;thinking&quot;.
+
+This makes &quot;writing&quot; reachable in Phase 9 when Oli&#039;s file edits stream in. And it&#039;s testable now with synthetic events. I&#039;ll keep the helper tolerant of an optional `subagent_type`/`isFromSubAgent` field.
+
+Let me just implement cleanly and test both statuses with synthetic events (TaskAction for thinking; a FileEditorAction tagged as from oli for writing). Since OHEvent may not have `isFromSubAgent`, I&#039;ll check a few plausible markers defensively. Hmm, defensive unknown fields is messy.
+
+Given time, let me simplify to what&#039;s defensible and shippable now:
+
+`isOliActive(events)`: true when the latest unresolved action is a `TaskAction` whose `subagent_type` is `oli` (case-insensitive). This is the delegation signal — the parent is waiting on Oli.
+
+`deriveOliStatus(events)`: 
+  - null when not active
+  - &quot;writing&quot; when the Oli delegation&#039;s `prompt`/`description` mentions code writing? No, too hacky.
+
+OK final decision: status = &quot;thinking&quot; while active, and OliOrb supports a &quot;writing&quot; variant that Phase 9 can drive. I&#039;ll expose `deriveOliStatus` returning &quot;thinking&quot; | &quot;writing&quot; | null where &quot;writing&quot; is decided by whether the *live unresolved action* is a file-editing kind — and since when Oli is active the live action is the TaskAction, I&#039;ll instead check: while Oli active, if a newer unresolved action exists that is a file-edit... not possible.
+
+I&#039;ll go with: deriveOliStatus returns &quot;thinking&quot; when active. And separately, the component chooses &quot;writing&quot; when the live activity (from deriveLiveActivity) is a code-writing action AND Oli is active — impossible, so effectively always &quot;thinking&quot; for now. That&#039;s a no-op branch = scaffolding, which violates &quot;no scaffolding&quot;.
+
+Cleanest honest approach: OliOrb has a `status: &quot;thinking&quot; | &quot;writing&quot;` prop; TypingIndicator passes `oliStatus` derived as: &quot;writing&quot; if Oli active and the current live action is a file-editing action, else &quot;thinking&quot;. I&#039;ll implement `deriveOliStatus(events)` in oli-activity.ts doing exactly that, computing the live unresolved action itself. Test it with:
+  - no oli → null
+  - unresolved TaskAction(oli) → &quot;thinking&quot;
+  - unresolved FileEditorAction(create) + unresolved TaskAction(oli)?? can&#039;t both be live.
+
+Hmm — both can&#039;t be live because &quot;live&quot; = the single most recent unresolved action. So I need a different definition: Oli is active if ANY unresolved action is an Oli TaskAction (not just the latest). Then &quot;writing&quot; if the latest unresolved action overall is a file-edit while an Oli task is still open. That&#039;s actually plausible in Phase 9 if Oli&#039;s sub-actions appear as parent-stream actions after the TaskAction (they&#039;d be unresolved while the TaskAction is also unresolved). 
+
+So: 
+- isOliActive = there exists an unresolved Oli TaskAction.
+- deriveOliStatus = &quot;writing&quot; if the latest unresolved action is a file-write kind, else &quot;thinking&quot;.
+
+That&#039;s coherent, testable, and future-proof. Let me implement with that.
+
+Let me define file-write kinds: FileEditorAction with command in create/str_replace/insert; StrReplaceEditorAction; ApplyPatchAction maybe. I&#039;ll include FileEditorAction (create/str_replace/insert) and StrReplaceEditorAction.
+
+Let me write the util now.
+
+Now, for TypingIndicator text: The user wants &quot;Oli and deepseek are thinking&quot; when both. So when the derived activity is the generic THINKING and Oli active:
+  - if model DeepSeek → THINKING$OLI_AND_MODEL {model}
+  - else → THINKING$OLI_AND_AGENT
+When generic THINKING and not Oli:
+  - if model DeepSeek → ACTION_MESSAGE$MODEL_THINKING {model}
+  - else → ACTION_MESSAGE$THINK
+When a specific action: keep the action descriptor (and still show orbs).
+
+Let me write the tests for typing indicator additions and the util.
+
+Let me create the util file and its test, then the OliOrb, then update typing-indicator.
+
+Let me check `TaskAction` import path and type guard `isActionEvent`.
+
+Now implement.
+
+Now the Oli activity util and its test (TDD).</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:34:19.347Z">2026-11-08T21:34:19.347Z</time></header>
+  <div class="content">Now the test for the Oli util.</div>
+</section>
+<details>
+  <summary><strong>Tool:</strong> Add Oli activity tests<time datetime="2026-11-08T21:34:19.362Z">2026-11-08T21:34:19.362Z</time></summary>
+  <pre>File created successfully at: /workspace/project/FreeHands/__tests__/utils/oli-activity.test.ts</pre>
+</details>
+<details>
+  <summary><strong>Tool:</strong> Run Oli activity tests<time datetime="2026-11-08T21:34:36.193Z">2026-11-08T21:34:36.193Z</time></summary>
+  <pre>Command: `cd /workspace/project/FreeHands &amp;&amp; npx vitest run __tests__/utils/oli-activity.test.ts 2&gt;&amp;1 | tail -30`
+
+Output:
+```sh
+RUN  v5.0.0 /workspace/project/FreeHands
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  15:34:33
+   Duration  2.42s (environment 62%, setup 25%, transform 13%)
+
+npm notice
+npm notice New major version of npm available! 11.21.0 -&gt; 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
+```</pre>
+</details>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:34:46.876Z">2026-11-08T21:34:46.876Z</time></header>
+  <div class="content">Now the Oli robot head component + animation. First the keyframes in tailwind.css.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:35:22.900Z">2026-11-08T21:35:22.900Z</time></header>
+  <div class="content">Now I need to wire the typing indicator:
+1. Model-aware text: &quot;DeepSeek is thinking…&quot; when the model is DeepSeek and activity is the generic THINK.
+2. Oli: show blue robot head beside the orb, and text &quot;Oli and DeepSeek are thinking&quot; when both.
+
+Let me update `typing-indicator.tsx`. I need the current model. Let me pass `model` as a prop (chat-interface has activeConversation.llm_model).
+
+Let me design: `TypingIndicator({ events, model })`. Compute:
+- activity = deriveLiveActivity(events)
+- oliStatus = deriveOliStatus(events)
+- modelLabel = thinkingModelLabel(model)
+
+Rendering:
+- Orb always.
+- If oliStatus: render OliRobotHead status=oliStatus.
+- Text:
+  - If oliStatus and modelLabel: THINKING$OLI_AND_MODEL with {model: modelLabel}
+  - If oliStatus and no modelLabel: THINKING$OLI_AND_AGENT
+  - Else if activity is generic THINK and modelLabel: ACTION_MESSAGE$MODEL_THINKING with {model}
+  - Else: existing rendering.
+
+But careful: when Oli is active, deriveLiveActivity may show &quot;TaskAction&quot; title etc. The user wants when Oli is working with it, show &quot;Oli and deepseek are thinking&quot;. So when Oli is active, we override the activity text with the Oli phrasing? The user said: &quot;if Oli is working with it, then it should show the blue animated robot head beside the white thinking head and shows Oli and deepseek are thinking.&quot; So yes, when Oli is active, show the combined text.
+
+But what if Oli is active and the model is not DeepSeek? Then &quot;Oli and the agent are thinking&quot;. Good.
+
+Now for Phase 3 alone (no Oli), the generic thinking should show &quot;DeepSeek is thinking…&quot;. Let me implement: when the derived activity is the generic THINK (kind translation, key ACTION_MESSAGE$THINK) and modelLabel exists, use MODEL_THINKING.
+
+Let me write it.
+
+Also need to pass `model` from chat-interface. Let me update both.
+
+Let me check the TypingIndicator current render to modify.
+
+Now wiring the typing indicator for both phases.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:35:32.140Z">2026-11-08T21:35:32.140Z</time></header>
+  <div class="content">Now update the `TypingIndicator` component body.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:35:52.571Z">2026-11-08T21:35:52.571Z</time></header>
+  <div class="content">Now wire the model into the chip at the call site in chat-interface.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:36:33.317Z">2026-11-08T21:36:33.317Z</time></header>
+  <div class="content">The chip text is empty (`&lt;span class=&quot;min-w-0 truncate&quot; /&gt;`). The `t(...)` returned empty? Or the mock isn&#039;t being applied. Let me debug. Actually the issue: the `useTranslation` mock returns template but perhaps the `I18nKey` import returns undefined key? Wait — the rendered span is empty for the non-Oli DeepSeek test too. 
+
+Hmm, `t` mock: `t(key, values)`. For `ACTION_MESSAGE$MODEL_THINKING`, template = `{{model}} is thinking…`. With values `{model: &quot;DeepSeek V4.1 Flash&quot;}` → replace → &quot;DeepSeek V4.1 Flash is thinking…&quot;. That should work.
+
+But the span is empty. Maybe the vi.mock isn&#039;t being hoisted correctly with top-level await import. Actually I used `await import` at top level — that&#039;s a top-level await in the test module. Combined with `vi.mock`, the mock factory should apply. But maybe the module `typing-indicator` was already imported/cached by another test file... no, each test file is isolated.
+
+Wait — maybe the issue is that `THINKING_ACTIVITY.key` is `&quot;ACTION_MESSAGE$THINK&quot;` and `activity.key` is that string, so `isRestingThinking` true. modelLabel = &quot;DeepSeek V4.1 Flash&quot;. So renderText returns `t(I18nKey.ACTION_MESSAGE$MODEL_THINKING, {model})`. 
+
+Unless `I18nKey.ACTION_MESSAGE$MODEL_THINKING` is undefined because declaration.ts wasn&#039;t regenerated! I added new translation keys but haven&#039;t run `npm run make-i18n`. So `I18nKey.ACTION_MESSAGE$MODEL_THINKING` is `undefined`, and `t(undefined, ...)` returns... the template lookup returns key=undefined → returns undefined → renders nothing.
+
+Yes! Need to run make-i18n. Let me do that.
+
+The chip text is empty — I need to regenerate the i18n declaration for the new keys.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:36:44.472Z">2026-11-08T21:36:44.472Z</time></header>
+  <div class="content">All 5 pass. Now let me run the affected suites plus lint/typecheck.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:38:47.865Z">2026-11-08T21:38:47.865Z</time></header>
+  <div class="content">Typecheck clean. Now let me run lint on the changed files and the broader suites.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:40:26.559Z">2026-11-08T21:40:26.559Z</time></header>
+  <div class="content">Good — the same inline-style warnings exist on the pre-existing `thinking-orb.tsx` (8 warnings), so my new component matches the established pattern exactly. Consistent.
+
+Now let me run the full lint + full test suite (backgrounded) + build. Actually let me run the full test suite in the background and do lint/build meanwhile. Let me kick off the full test run in background.
+
+Let me first run full lint and build, then full tests.
+
+Let me run `npm run lint` (whole repo) and `npm run build` — both took reasonable time before.
+
+Actually, let me kick off the full test suite in the background first (it&#039;s ~11 min), then run lint+build.
+
+Same warnings as the existing `thinking-orb.tsx` — consistent with the established pattern. Let me kick off the full test suite in the background while running lint and build.</div>
+</section>
+<section class="message assistant">
+  <header><h2>Assistant</h2><time datetime="2026-11-08T21:44:05.782Z">2026-11-08T21:44:05.782Z</time></header>
+  <div class="content">Lint: 0 errors (707 warnings; previously 700, +7 = my new component&#039;s warnings, matching thinking-orb&#039;s pattern).
+
+Now wait for the full test suite. Let me check progress.
+
+Lint 0 errors, build passes. Let me check on the full test suite.</div>
+</section>
+  </main>
+</body>
+</html>
